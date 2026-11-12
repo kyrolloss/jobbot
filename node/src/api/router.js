@@ -1,5 +1,13 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 import { connect } from '../db.js';
 import { applyNotificationsMigration, handleNotificationRequest } from '../notifications.js';
+import { buildPrototype } from '../prototype.js';
+import { getPricesReport, getTimingReport, getWeeklyReport } from '../reports.js';
+
+const prototypeMigrationPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../migrations/20261112_add_prototype_html.sql');
+const prototypeMigrated = new WeakSet();
 
 export class HttpError extends Error {
   constructor(status, code, message, details = {}) { super(message); this.status = status; this.code = code; this.details = details; }
@@ -10,6 +18,32 @@ function sendJson(response, status, payload) {
   const body = JSON.stringify(payload);
   response.writeHead(status, { 'Content-Type': 'application/json; charset=utf-8', 'Content-Length': Buffer.byteLength(body), 'Cache-Control': 'no-store' });
   response.end(body);
+}
+
+function sendHtml(response, status, html) {
+  if (response.writableEnded) return;
+  response.writeHead(status, { 'Content-Type': 'text/html; charset=utf-8', 'Content-Length': Buffer.byteLength(html), 'Cache-Control': 'no-store' });
+  response.end(html);
+}
+
+function applyPrototypeMigration(db) {
+  if (prototypeMigrated.has(db)) return;
+  const columns = new Set(db.prepare('PRAGMA table_info(user_jobs)').all().map((column) => column.name));
+  if (!columns.has('prototype_html')) db.exec(fs.readFileSync(prototypeMigrationPath, 'utf8'));
+  prototypeMigrated.add(db);
+}
+
+function positiveJobId(rawId) {
+  if (!/^[1-9]\d*$/.test(String(rawId))) return null;
+  const value = Number(rawId);
+  return Number.isSafeInteger(value) ? value : null;
+}
+
+function estimateFields(value) {
+  try {
+    const parsed = value ? JSON.parse(value) : null;
+    return parsed && typeof parsed === 'object' && !Array.isArray(parsed) ? parsed : {};
+  } catch { return {}; }
 }
 
 async function readJson(request, maxBytes) {
@@ -36,7 +70,9 @@ function compile(pattern) {
 
 export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
   const routes = [];
-  applyNotificationsMigration(connect());
+  const startupDb = connect();
+  applyNotificationsMigration(startupDb);
+  applyPrototypeMigration(startupDb);
   const router = {
     add(method, pattern, handler) { routes.push({ method: method.toUpperCase(), ...compile(pattern), handler }); return this; },
     async handle(request, response, context = {}) {
@@ -72,6 +108,44 @@ export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
   ]) {
     router.add(method, route, ({ body, ...context }) => handleNotificationRequest(action, { body, ...context }));
   }
+  router.add('POST', '/jobs/:id/prototype', async ({ params, body, db, principal, guard, response }) => {
+    const jobId = positiveJobId(params.id);
+    if (jobId === null) { sendJson(response, 400, { error: 'invalid_job_id' }); return; }
+    const userId = principal.userId;
+    const row = db.prepare(`SELECT j.rowid AS id,j.source,j.title,j.description,j.posted_at,j.currency,j.created_at,
+        uj.proposal AS proposal_text,uj.estimate,uj.prototype_html
+      FROM jobs j JOIN user_jobs uj ON uj.job_id=j.rowid
+      WHERE j.rowid=? AND uj.user_id=?`).get(jobId, userId);
+    if (!row) { sendJson(response, 404, { error: 'not_found' }); return; }
+    const estimate = estimateFields(row.estimate);
+    const job = { ...row, estimated_price: estimate.estimated_price, estimated_days: estimate.estimated_days };
+    try {
+      const html = await guard.execute({ principal, feature: 'prototype', jobId }, async () => {
+        if (!row.proposal_text || !row.proposal_text.trim()) {
+          throw new HttpError(400, 'NO_PROPOSAL', 'لا يوجد عرض مكتوب لهذه الوظيفة');
+        }
+        const generated = buildPrototype(job, row.proposal_text, body || {});
+        db.prepare('UPDATE user_jobs SET prototype_html=?,updated_at=? WHERE user_id=? AND job_id=?')
+          .run(generated, new Date().toISOString(), userId, jobId);
+        return { result: generated };
+      });
+      sendHtml(response, 200, html);
+    } catch (failure) {
+      if (failure?.code === 'PLAN_REQUIRED') sendJson(response, 403, { error: 'feature_unavailable', feature: 'prototype' });
+      else if (failure?.code === 'NO_PROPOSAL') sendJson(response, 400, { error: 'no_proposal', message: 'لا يوجد عرض مكتوب لهذه الوظيفة' });
+      else throw failure;
+    }
+  });
+  router.add('GET', '/jobs/:id/prototype', ({ params, db, principal, response }) => {
+    const jobId = positiveJobId(params.id);
+    if (jobId === null) { sendJson(response, 400, { error: 'invalid_job_id' }); return; }
+    const prototype = db.prepare('SELECT prototype_html FROM user_jobs WHERE user_id=? AND job_id=?').get(principal.userId, jobId)?.prototype_html;
+    if (!prototype) { sendJson(response, 404, { error: 'no_prototype' }); return; }
+    sendHtml(response, 200, prototype);
+  });
+  router.add('GET', '/reports/prices', ({ db, principal }) => ({ data: getPricesReport(principal.userId, db) }));
+  router.add('GET', '/reports/timing', ({ db, principal }) => ({ data: getTimingReport(principal.userId, db) }));
+  router.add('GET', '/reports/weekly', ({ db, principal }) => ({ data: getWeeklyReport(principal.userId, db) }));
   return router;
 }
 
