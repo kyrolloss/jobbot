@@ -7,7 +7,7 @@
     "node": ">=22.13"
   },
   "scripts": {
-    "start": "node src/run.js",
+    "start": "node scripts/run_api.js",
     "test": "node --test"
   },
   "dependencies": {
