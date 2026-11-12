@@ -1,0 +1,73 @@
+{
+  "tech": [
+    { "title": "rapid", "description": "email", "expected": [] },
+    { "title": "مطلوب مطور فلاتر", "description": "", "expected": ["flutter"] },
+    { "title": "FIREBASE integration", "description": "", "expected": ["firebase"] },
+    { "title": "", "description": "", "expected": [] },
+    { "title": "Flutter and Firebase", "description": "Python backend", "expected": ["firebase", "flutter", "python"] },
+    { "title": "مطلوب تطبيق فلاتر", "description": "تطوير تطبيق جوال", "expected": ["flutter", "mobile-app"] },
+    { "title": "", "description": "بايثون وواجهات API", "expected": ["api", "python"] },
+    { "title": "تطبيق جوال باستخدام React Native", "description": "", "expected": ["mobile-app", "react"] },
+    { "title": "بوت واتساب وذكاء اصطناعي", "description": "شات بوت", "expected": ["ai-chatbot", "whatsapp-bot"] },
+    { "title": "أتمتة عبر n8n وZapier", "description": "", "expected": ["automation"] },
+    { "title": "", "description": "استخراج البيانات وكشط البيانات", "expected": ["scraping"] },
+    { "title": "", "description": "", "expected": [] },
+    { "title": "email", "description": "", "expected": [] },
+    { "title": "rapid", "description": "", "expected": [] },
+    { "title": "Node.js وNext.js مع Firebase", "description": "", "expected": ["firebase", "nextjs", "node"] },
+    { "title": "AI و LLM لبوت شات بوت", "description": "", "expected": ["ai-chatbot", "llm"] },
+    { "title": "React Native، تطبيق هاتف", "description": "", "expected": ["mobile-app", "react"] },
+    { "title": "موقع ووردبريس", "description": "", "expected": ["wordpress"] },
+    { "title": "باك إند Python FastAPI", "description": "", "expected": ["fastapi", "python"] },
+    { "title": "Flutter، React، Android، iOS", "description": "", "expected": ["android", "flutter", "ios", "react"] }
+  ],
+  "score": [
+    {
+      "job": { "title": "", "description": "", "budget": "" },
+      "stats": {},
+      "expected": { "score": 2.5, "label": "😐", "line": "📋 الأرقام مش متاحة، افتح الرابط وشوف العروض والميزانية" }
+    },
+    {
+      "job": { "title": "Flutter API", "description": "Firebase backend", "budget": "" },
+      "stats": {},
+      "expected": { "score": 5.5, "label": "👍", "line": "📋 الأرقام مش متاحة، افتح الرابط وشوف العروض والميزانية" }
+    },
+    {
+      "job": { "title": "مطلوب مطور فلاتر", "description": "", "budget": "" },
+      "stats": { "budget_min": 100, "budget_max": 100, "currency": "USD", "bid_count": 0, "bid_avg": 40, "age_hours": 0 },
+      "expected": { "score": 4.2, "label": "😐", "line": "كلمات عنوان 1/وصف 0 | ميزانية≈100 USD | عروض 0 | متوسط 40 USD | عمر 0س" }
+    },
+    {
+      "job": { "title": "AI API node", "description": "Email", "budget": "" },
+      "stats": { "bid_count": 41 },
+      "expected": { "score": 4.5, "label": "👍", "line": "كلمات عنوان 3/وصف 0 | ميزانية غير معروفة | عروض 41 | متوسط غير متاح | العمر غير متاح" }
+    },
+    {
+      "job": { "title": "", "description": "", "budget": "100 USD" },
+      "stats": { "currency": "USD" },
+      "expected": { "score": 1.7, "label": "😐", "line": "كلمات عنوان 0/وصف 0 | ميزانية≈100 USD | عروض غير متاح | متوسط غير متاح | العمر غير متاح" }
+    },
+    {
+      "job": { "title": "Node API", "description": "", "budget": "" },
+      "stats": { "bid_count": 10, "bid_avg": 85, "currency": "EUR", "age_hours": 24 },
+      "expected": { "score": 5.4, "label": "👍", "line": "كلمات عنوان 2/وصف 0 | ميزانية غير معروفة | عروض 10 | متوسط 85 EUR | عمر 24س" }
+    },
+    {
+      "job": { "title": "Flutter React Python Django FastAPI Node API AI", "description": "Flutter Dart Python Firebase Supabase React backend mobile app automation scraping", "budget": "" },
+      "stats": {},
+      "expected": { "score": 7.5, "label": "🔥", "line": "📋 الأرقام مش متاحة، افتح الرابط وشوف العروض والميزانية" }
+    }
+  ],
+  "filters": [
+    { "title": "API developer", "description": "", "expected": true },
+    { "title": "email newsletter", "description": "", "expected": false },
+    { "title": "مطلوب تطبيق موبايل", "description": "", "expected": true },
+    { "title": "Flutter WordPress site", "description": "", "expected": false },
+    { "title": "ووردبريس فقط", "description": "", "expected": false },
+    { "title": "", "description": "", "expected": false },
+    { "title": "Shopify and React", "description": "", "expected": false },
+    { "title": "موقع ووردبريس", "description": "", "expected": false },
+    { "title": "Backend automation", "description": "", "expected": true },
+    { "title": "", "description": "أتمتة مع Python", "expected": true }
+  ]
+}

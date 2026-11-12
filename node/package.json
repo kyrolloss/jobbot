@@ -1,0 +1,17 @@
+{
+  "name": "jobbot-node",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "engines": {
+    "node": ">=22.13"
+  },
+  "scripts": {
+    "start": "node src/run.js",
+    "test": "node --test"
+  },
+  "dependencies": {
+    "cheerio": "*",
+    "dotenv": "*"
+  }
+}

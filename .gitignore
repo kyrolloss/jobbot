@@ -1,0 +1,17 @@
+.env
+venv/
+jobs.db
+samples/
+browser_profile/
+logs/
+prototypes/
+
+__pycache__/
+*.pyc
+*.db
+*.lock
+settings.json
+n8n/
+*_backup*
+node/node_modules/
+node/logs/

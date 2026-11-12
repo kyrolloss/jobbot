@@ -1,0 +1,2289 @@
+<!DOCTYPE html>
+
+<html data-bs-theme="system">
+  <script>
+    const theme_type = document.documentElement.dataset.bsTheme;
+    if (theme_type === "system") {
+      document.documentElement.dataset.bsTheme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    }
+  </script>
+  <head>
+    <title>مجتمع خمسات - طلبات الخدمات</title>
+    
+
+<meta name="theme-color" content="#444">
+
+<!-- facebook open graph -->
+<meta property="og:site_name" content="موقع خمسات">
+<meta property="og:locale" content="ar">
+<meta property="og:locale:alternate" content="ar">
+<meta property="og:type" content="website">
+  <meta property="og:title" content="مجتمع خمسات ">
+<meta property="og:description" content="">
+<!-- end facebook open graph -->
+
+<!-- twitter cards -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:site" content="@KhamsatDotCom">
+<meta name="twitter:creator" content="@KhamsatDotCom">
+  <meta name="twitter:title" content="مجتمع خمسات ">
+<meta name="twitter:description" content="">
+<!-- end twitter cards -->
+
+  <meta property="og:image:height" content="256">
+  <meta property="og:image:width" content="256">
+  <meta property="og:url" content="https://khamsat.com">
+  <meta property="og:image" content="https://khamsat.hsoubcdn.com/assets/images/khamsat-og-77d96e90f60e31e7bf47cfd842c973827b6fab6dbee37b0192fdc33eafe7227f.png">
+  <meta name="twitter:image:src" content="https://khamsat.hsoubcdn.com/assets/images/khamsat-og-77d96e90f60e31e7bf47cfd842c973827b6fab6dbee37b0192fdc33eafe7227f.png">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+
+<link href="https://khamsat.hsoubcdn.com/assets/images/favicon-740117d323c70fbc071fefd88fbff2f0bb0746f995a2f852ac2d46bea229f212.png" rel="shortcut icon" type="image/png">
+<link rel="stylesheet" href="//static.hsoubcdn.com/assets/fonts/css/OpenSans.css" media="all">
+<link rel="stylesheet" href="//static.hsoubcdn.com/assets/fonts/css/NotoArabic.css" media="all">
+<link rel="stylesheet" href="//static.hsoubcdn.com/header/4.0.36/css/header.rtl.css" media="all">
+<link rel="stylesheet" href="https://khamsat.hsoubcdn.com/assets/css/application-741a60a57a9bcf203a6d514c5e2c88f3eff5078af0ff2d509aa0ed78ffd3c1ea.css" media="all">
+
+<script src="https://khamsat.hsoubcdn.com/assets/js/application-bfea164263db5366f70a06751af4df4a3b05d6815cf0794b4285b72ee48e339f.js" defer></script>
+<script src="//static.hsoubcdn.com/header/4.0.36/js/header.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1">
+<script type="text/javascript">
+  var loggedIn = false;
+  var pageTitle = 'مجتمع خمسات - طلبات الخدمات';
+  var current_unread_count = '0';
+  var page_size = '30';
+  var search_keywords = '';
+</script>
+
+<!-- service upgrades lists -->
+<!-- end of upgrades lists -->
+    
+<script>
+  window.addEventListener('load', function () {
+  // check user country code, and set popup accordingly
+  // only display popup if user is not from EU
+  
+  if ('true' == 'true') {
+    return;
+  }
+  // obtain cookieconsent plugin
+  var cookieconsent = initCookieConsent();
+
+  // run plugin with config object
+  cookieconsent.run({
+    autorun: true,
+    current_lang: 'en',
+    autoclear_cookies: true,
+    cookie_name: 'cc_cookie',
+    page_scripts: true,
+    force_consent: true,
+    cookie_expiration: 365, // 1 year
+    gui_options: {
+      consent_modal: {
+        layout: 'box',                      // box,cloud,bar
+        position: 'bottom right',           // bottom,middle,top + left,right,center
+        transition: 'slide'                 // zoom,slide
+      },
+      settings_modal: {
+        layout: 'box',                      // box,bar
+        // position: 'left',                // right,left (available only if bar layout selected)
+        transition: 'slide'                 // zoom,slide
+      }
+    },
+    languages: {
+      en: {
+        consent_modal: {
+          title: 'Privacy & Transparency',
+          description: 'Hi, this website uses essential cookies to ensure its proper operation and tracking cookies to understand how you interact with it. The latter will be set only upon approval. <a aria-label="Cookie policy" class="cc-link" href="https://khamsat.com/privacy">Read more</a>',
+          primary_btn: {
+              text: 'Accept',
+              role: 'accept_all'              // 'accept_selected' or 'accept_all'
+          },
+          secondary_btn: {
+              text: 'Settings',
+              role: 'settings'                // 'settings' or 'accept_necessary'
+          }
+        },
+        settings_modal: {
+          title: 'Cookie preferences',
+          save_settings_btn: 'Save settings',
+          accept_all_btn: 'Accept all',
+          reject_all_btn: 'Reject all',       // optional, [v.2.5.0 +]
+          cookie_table_headers: [
+            {col1: 'Name'},
+            {col2: 'Domain'},
+            {col3: 'Expiration'},
+            {col4: 'Description'},
+            {col5: 'Type'}
+          ],
+          blocks: [
+            {
+              title: 'Cookie usage',
+              description: 'I use cookies to ensure the basic functionalities of the website and to enhance your online experience. You can choose for each category to opt-in/out whenever you want.'
+            }, {
+              title: 'Strictly necessary cookies',
+              description: 'These cookies are essential for the proper functioning of my website. Without these cookies, the website would not work properly.',
+              toggle: {
+                  value: 'necessary',
+                  enabled: true,
+                  readonly: true
+              }
+            }, {
+              title: 'Analytics cookies',
+              description: 'These cookies collect information about how you use the website, which pages you visited and which links you clicked on. All of the data is anonymized and cannot be used to identify you.',
+              toggle: {
+                  value: 'analytics',
+                  enabled: true,
+                  readonly: false
+              },
+            }, {
+              title: 'More information',
+              description: 'For any queries in relation to my policy on cookies and your choices, please <a class="cc-link" href="https://support.khamsat.com/">contact support</a>.',
+            }
+          ]
+        }
+      }
+    }
+  });
+});
+</script>
+  </head>
+  <body class="tab-bar ">
+    <script>
+  var minorMenu, sidebarMenu;
+  var isCartPage = false
+  if (window.location.href.includes('/cart')){isCartPage = true}
+
+  var megamenuIconsConfig = {
+    width: 'auto',
+    align: 'right',
+    layout: 'fixed',
+    rows: [
+      {
+        columns: [
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                  <rect width="53" height="53" x="0" y="0" fill="#007054"/>
+                  <g transform="translate(12, 12) scale(0.42)" fill="#FFFFFF">
+                    <path d="M61,12.57c-1.06-1.29-2.21-2.49-3.45-3.61C51.44,3.39,43.32,0,34.42,0S17.36,3.41,11.24,9c-1.23,1.12-2.38,2.34-3.44,3.62C2.93,18.56,0,26.15,0,34.42c0,10.25,4.51,19.48,11.65,25.78h0c1.24,1.1,2.57,2.12,3.97,3.03h0c5.4,3.54,11.87,5.6,18.8,5.6s13.35-2.05,18.74-5.57c1.4-.91,2.72-1.92,3.97-3.02,7.17-6.31,11.7-15.55,11.7-25.83,0-8.29-2.94-15.9-7.84-21.85ZM12.62,55.67c-5.37-5.49-8.67-12.99-8.67-21.26,0-6.5,2.05-12.53,5.53-17.49,1.11,3.11,2.01,6.26,2.71,9.46.15.63.27,1.27.4,1.92.24,1.28.44,2.58.63,4.03.22,1.5.39,3.15.52,5.04.05.7.08,1.42.1,2.07v.17c.19,5.4-.21,10.8-1.21,16.07ZM12.89,12.89c5.52-5.52,13.13-8.93,21.53-8.93,3.3,0,6.48.52,9.45,1.5l-9.29,6.74-.78.57-17.15,12.44c-.92-4.17-2.17-8.3-3.76-12.33ZM18.3,36.62h0c-.14-1.83-.31-3.45-.53-4.91-.07-.51-.13-1.01-.21-1.49l16.95-12.3,14.56,10.94h0s-30.78,7.77-30.78,7.77ZM50.81,33.17s0,0,0,0c-.16,1.31-.27,2.6-.35,3.88-.07,1.09-.12,2.24-.15,3.5l-13.89,10.33-13.64-10.64,28.03-7.07ZM21.47,61.99h0c-1.71-.8-3.33-1.76-4.84-2.85.17-.75.32-1.49.46-2.23.89-4.65,1.37-9.4,1.4-14.18l14.11,11.01-11.11,8.26s0,0,0,0ZM34.42,64.89c-2.68,0-5.29-.35-7.77-1.01,0,0,0,0,0,0l23.75-17.65c.04.92.1,1.83.18,2.73.3,3.42.82,6.83,1.57,10.21-5,3.6-11.13,5.72-17.74,5.72ZM52.89,22.07c-.29,1.09-.55,2.19-.79,3.3l-13.67-10.27,10.37-7.53c2.62,1.4,5.01,3.19,7.11,5.27-.62,1.57-1.2,3.17-1.71,4.76-.38,1.21-.89,2.8-1.31,4.47ZM56.16,55.74c-.45-2.39-.78-4.78-.98-7.19-.22-2.42-.31-4.9-.27-7.39.01-1.38.07-2.62.15-3.81.15-2.46.45-5,.89-7.56.35-2.2.82-4.4,1.4-6.57.4-1.56.87-3.08,1.24-4.21.23-.72.47-1.43.73-2.14,3.51,4.97,5.57,11.02,5.57,17.55,0,8.3-3.33,15.83-8.73,21.32Z"/>
+                  </g>
+                </svg>`,
+                text: 'سنديان',
+                url: 'https://sndian.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 512 512" fill="none">
+                  <rect width="512" height="512" fill="#1A1E27"/>
+                  <!-- Left tall bar -->
+                  <rect x="144" y="104" width="64" height="192" fill="white"/>
+                  <!-- Middle short bar -->
+                  <rect x="224" y="200" width="64" height="96" fill="white"/>
+                  <!-- Bottom bar -->
+                  <rect x="144" y="312" width="144" height="64" fill="white"/>
+                  <!-- Right tall bar -->
+                  <rect x="305" y="104" width="64" height="272" fill="white"/>
+                </svg>`,
+                text: 'أنا',
+                url: 'https://ana.hsoub.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="#1A1E27">
+                  <rect width="52.93" height="52.927" fill="#42BA7C"/>
+                  <g clip-path="url(#clip0)">
+                    <path d="M37.9232 32.912C33.3224 40.848 24.2504 44.24 17.7056 40.464C11.1608 36.752 9.5408 27.28 14.2064 19.408C18.8072 11.472 27.8792 8.08 34.424 11.856C40.9688 15.568 42.5888 25.04 37.9232 32.912ZM27.1016 22.16C28.268 23.12 30.212 22.736 31.3784 21.328C32.48 19.92 32.4152 18 31.184 17.04C29.9528 16.08 28.0736 16.464 26.9072 17.872C25.7408 19.28 25.8704 21.2 27.1016 22.16ZM32.2208 25.488C32.2208 25.296 32.156 25.104 31.9616 24.976C31.7672 24.784 31.508 24.848 31.2488 24.912C31.1192 24.9547 30.9896 24.9973 30.86 25.04C29.4344 25.3813 28.0304 25.7227 26.648 26.064C26.2592 26.192 26 26.384 26 26.768V29.968C26 31.632 26 33.296 26 34.96C26 35.216 26.0648 35.472 26.2592 35.664C26.3456 35.7493 26.4752 35.8133 26.648 35.856C27.7496 36.048 29.0456 35.28 29.8232 34.576C30.6008 33.872 31.2488 32.912 31.7024 31.888C32.5448 29.904 32.2208 27.664 32.2208 25.488Z" fill="white"/>
+                  </g>
+                  <defs>
+                    <clipPath id="clip0">
+                      <rect width="30" height="32" fill="white" transform="translate(11 10)"/>
+                    </clipPath>
+                  </defs>
+                </svg>`,
+                text: 'زيتون',
+                url: 'https://zaetoon.com',
+                target: '_blank',
+              },
+            },
+          },
+        ],
+      },
+      {
+        columns: [
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+                  <g id="Mostaql" fill-rule="nonzero">
+                    <rect id="rect58" fill="#2CAAE2" x="0" y="0.054" width="52.93" height="52.927" />
+                    <path
+                      id="path60"
+                      fill="#FFFFFF"
+                      d="M26.462,40.839 C18.566,40.839 12.145,34.417 12.145,26.521 C12.145,18.626 18.566,12.203 26.462,12.203 
+                        C34.358,12.203 40.781,18.627 40.781,26.521 C40.781,34.417 34.357,40.839 26.462,40.839 
+                        M26.462,19.611 C22.652,19.611 19.552,22.709 19.552,26.521 
+                        C19.552,30.333 22.652,33.431 26.462,33.431 
+                        C30.274,33.431 33.375,30.332 33.375,26.521 
+                        C33.375,22.71 30.273,19.611 26.462,19.611"
+                    />
+                  </g>
+                </svg>`,
+                text: 'مستقل',
+                url: 'https://mostaql.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+                  <g id="Khamsat" fill-rule="nonzero">
+                    <rect id="rect45" fill="#F3AD2D" x="0" y="0.625" width="52.928" height="52.928" />
+                    <path id="path47" fill="#353535" d="M23.213,28.105 C23.713,27.556 24.296,27.167 24.955,26.926 L24.955,22.221 C23.001,22.542 21.326,23.44 19.933,24.923 C18.156,26.816 17.265,29.09 17.265,31.749 L21.829,31.749 C21.83,30.334 22.291,29.12 23.213,28.105" />
+                    <polygon id="polygon49" fill="#353535" points="24.955 36.313 17.265 36.313 17.265 38.597 17.265 40.878 19.078 40.878 22.323 40.878 24.955 40.878" />
+                    <path id="path51" fill="#353535" d="M33.242,24.815 C31.419,23.065 29.222,22.155 26.651,22.084 C26.492,22.084 26.336,22.087 26.181,22.094 L26.181,26.666 C26.383,26.649 26.589,26.642 26.803,26.647 C28.09,26.691 29.189,27.18 30.101,28.116 C31.017,29.052 31.482,30.162 31.497,31.448 L31.497,31.47 L31.497,31.598 L31.473,31.726 C31.403,32.997 30.905,34.08 29.975,34.973 C29.044,35.866 27.938,36.312 26.652,36.312 L26.182,36.312 L26.182,40.877 L26.804,40.877 C29.303,40.834 31.45,39.923 33.242,38.145 C35.035,36.364 35.969,34.226 36.039,31.726 L36.039,31.706 L36.039,31.599 L36.039,31.471 L36.039,31.342 C35.998,28.741 35.063,26.566 33.242,24.815" />
+                    <path id="path53" fill="#353535" d="M24.955,13.597 L16.888,13.597 L16.888,27.803 C17.735,25.309 19.314,23.402 21.632,22.08 L21.632,18.34 L24.955,18.34 L24.955,13.597 Z" />
+                    <rect id="rect55" fill="#353535" x="26.181" y="13.598" width="8.68" height="4.743" />
+                  </g>
+                </svg>`,
+                text: 'خمسات',
+                url: 'https://khamsat.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="#1A1E27">
+                  <rect width="52.93" height="52.927" x="0" y="0" fill="#615D9B"/>
+                  <ellipse cx="26.465" cy="26.4635" rx="14.7028" ry="14.7019" fill="white"/>
+                  <path d="M30.7242 24.0493C30.628 23.6964 30.4836 23.3595 30.2911 23.0547C30.1146 22.75 29.89 22.4612 29.6334 22.2045C29.3767 21.9479 29.0879 21.7233 28.7831 21.5469C28.4783 21.3704 28.1414 21.226 27.7885 21.1137C27.4356 21.0175 27.0666 20.9694 26.6816 20.9694H24.4998C24.3394 20.9694 24.179 21.0014 24.0185 21.0656C23.8742 21.1298 23.7458 21.21 23.6335 21.3223C23.5212 21.4346 23.441 21.5629 23.3769 21.7073C23.3127 21.8516 23.2806 22.0121 23.2806 22.1725V31.9577C23.2806 32.2785 23.4089 32.5833 23.6335 32.8079C23.8581 33.0325 24.1629 33.1608 24.4838 33.1608C24.8046 33.1608 25.1094 33.0325 25.334 32.8079C25.5586 32.5833 25.6869 32.2785 25.6869 31.9577V29.359H26.6495C27.8045 29.359 28.7992 28.9419 29.6173 28.1238C30.4355 27.3057 30.8526 26.2951 30.8526 25.1562C30.8686 24.7872 30.8205 24.4183 30.7242 24.0493ZM28.3179 25.862C28.2216 26.0866 28.0933 26.263 27.9329 26.4395C27.7724 26.5999 27.5799 26.7282 27.3553 26.8245C27.1468 26.9207 26.9222 26.9688 26.6655 26.9688H25.703V23.3756H26.6655C26.9062 23.3756 27.1308 23.4237 27.3553 23.5199C27.5799 23.6162 27.7724 23.7445 27.9329 23.9049C28.0933 24.0653 28.2216 24.2578 28.3179 24.4824C28.4141 24.691 28.4623 24.9316 28.4623 25.1882C28.4623 25.4128 28.4141 25.6374 28.3179 25.862Z" fill="#615D9B"/>
+                  <path d="M26.473 15.435C25.9115 15.435 25.4784 15.8842 25.4784 16.4296C25.4784 16.991 25.9276 17.4241 26.473 17.4241C31.4461 17.4241 35.4888 21.4666 35.4888 26.4394C35.4888 27.0008 35.938 27.45 36.4834 27.45C37.0449 27.45 37.478 27.0008 37.478 26.4394C37.4941 20.3918 32.5531 15.435 26.473 15.435Z" fill="#615D9B"/>
+                  <path d="M26.473 35.4868C21.4999 35.4868 17.4572 31.4443 17.4572 26.4715C17.4572 25.91 17.0081 25.4769 16.4626 25.4769C15.9172 25.4769 15.468 25.9261 15.468 26.4715C15.468 32.5512 20.409 37.4919 26.4891 37.4919C27.0505 37.4919 27.4837 37.0428 27.4837 36.4974C27.4676 35.9359 27.0185 35.4868 26.473 35.4868Z" fill="#615D9B"/>
+                  <path d="M26.473 41.1654C18.3556 41.1654 11.7622 34.5724 11.7622 26.4715C11.7622 18.3706 18.3556 11.7615 26.473 11.7615C34.5904 11.7615 41.1678 18.3546 41.1678 26.4555C41.1678 34.5564 34.5744 41.1654 26.473 41.1654ZM26.473 13.7667C19.4625 13.7667 13.7675 19.4614 13.7675 26.4715C13.7675 33.4816 19.4625 39.1602 26.457 39.1602C33.4514 39.1602 39.1464 33.4655 39.1464 26.4715C39.1464 19.4774 33.4675 13.7667 26.473 13.7667Z" fill="white"/>
+                </svg>`,
+                text: 'بيكاليكا',
+                url: 'https://picalica.com',
+                target: '_blank',
+              },
+            },
+          },
+        ],
+      },
+      {
+        columns: [
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="54" viewBox="0 0 53 54" fill="none">
+                  <rect fill="#7566F1" x="0" y="0" width="53" height="54" />
+                  <g transform="translate(11, 12)" fill="#FFFFFF" fill-rule="nonzero">
+                    <path d="M12.4,15.4879845 C12.4,17.2182171 13.8003861,18.624031 15.5239382,18.624031 C17.2474903,18.624031 18.6478764,17.2182171 18.6478764,15.4879845 C18.6478764,13.7577519 17.2474903,12.351938 15.5239382,12.351938 C13.8003861,12.351938 12.4,13.7577519 12.4,15.4879845 Z" />
+                    <path d="M3.0042471,14.4546512 C3.50694981,8.3627907 8.46216216,3.4244186 14.5305019,2.95581395 C16.9482625,2.7755814 19.3540541,3.28023256 21.4725869,4.43372093 C22.0590734,4.75813953 22.7891892,4.62596899 23.2200772,4.10930233 C23.5073359,3.78488372 23.6150579,3.35232558 23.5432432,2.91976744 C23.4594595,2.4872093 23.196139,2.12674419 22.8131274,1.91046512 C20.5749035,0.696899225 18.06139,0.0600775194 15.5,0.0600775194 C15.1888031,0.0600775194 14.8776062,0.0720930233 14.5664093,0.0841085271 C6.81042471,0.552713178 0.598455598,6.77674419 0.131660232,14.5627907 C-0.0837837838,18.1674419 0.957528958,21.748062 3.08803089,24.655814 C3.33938224,25.0042636 3.74633205,25.2205426 4.17722008,25.2445736 C4.60810811,25.2565891 5.01505792,25.0883721 5.3023166,24.775969 C5.74517375,24.2713178 5.78108108,23.5143411 5.38610039,22.9736434 C3.6027027,20.5104651 2.75289575,17.4945736 3.0042471,14.4546512 Z" opacity="0.7" />
+                    <path d="M30.3297297,11.1984496 C29.934749,9.84069767 29.3722008,8.55503876 28.6420849,7.37751938 C28.4266409,7.01705426 28.0555985,6.77674419 27.6366795,6.71666667 C27.2177606,6.65658915 26.7988417,6.78875969 26.4756757,7.06511628 C25.9610039,7.52170543 25.8532819,8.30271318 26.2243243,8.90348837 C26.8826255,9.98488372 27.3853282,11.1624031 27.6965251,12.4 C29.0370656,17.6387597 26.9065637,23.129845 22.3702703,26.0856589 C22.2625483,26.1577519 22.1189189,26.1337209 22.0351351,26.0375969 L18.2648649,21.8081395 C18.0972973,21.6158915 17.8220077,21.5437984 17.5706564,21.627907 C16.6131274,21.9523256 15.6196911,22.0484496 14.6142857,21.9042636 C11.753668,21.5077519 9.5034749,19.2248062 9.13243243,16.3651163 C8.90501931,14.5627907 9.3957529,12.7965116 10.5447876,11.4027132 C11.6818533,10.0209302 13.3335907,9.16782946 15.1050193,9.05968992 L15.3683398,9.04767442 C15.7274131,9.04767442 16.0146718,9.05968992 16.3138996,9.09573643 C19.0907336,9.45620155 21.3528958,11.6550388 21.807722,14.4426357 C22.023166,15.7883721 21.8316602,17.1341085 21.2332046,18.3356589 C20.9579151,18.8883721 21.0177606,19.5251938 21.3648649,19.9577519 C21.6760618,20.3422481 22.130888,20.5224806 22.6216216,20.4744186 C23.1123552,20.4143411 23.5312741,20.1139535 23.7586873,19.6693798 C24.5606178,18.0593023 24.8837838,16.2569767 24.6803089,14.4546512 C24.2733591,10.705814 21.5444015,7.52170543 17.9057915,6.5124031 C17.8100386,6.47635659 17.7382239,6.45232558 17.6664093,6.42829457 C17.3073359,6.34418605 16.9482625,6.28410853 16.5891892,6.23604651 C16.3498069,6.2120155 16.1104247,6.2 15.8830116,6.1879845 L15.7992278,6.1879845 C15.6436293,6.1879845 15.5,6.1879845 15.3444015,6.1879845 C15.2606178,6.1879845 15.1648649,6.1879845 15.0810811,6.2 L14.9254826,6.2120155 C14.5544402,6.23604651 14.2312741,6.27209302 13.9320463,6.32015504 C13.8722008,6.33217054 13.8003861,6.34418605 13.7405405,6.36821705 C9.38378378,7.23333333 6.23590734,11.0782946 6.23590734,15.524031 C6.23590734,18.7922481 7.98339768,21.8682171 10.8081081,23.5503876 C10.8679537,23.5864341 10.9158301,23.6585271 10.9277992,23.7306202 C10.9397683,23.8027132 10.9158301,23.8868217 10.8679537,23.9348837 L7.43281853,27.779845 C7.3011583,27.924031 7.24131274,28.1282946 7.27722008,28.3205426 C7.3011583,28.5127907 7.40888031,28.6689922 7.57644788,28.7771318 C12.0888031,31.5166667 18.169112,31.6968992 22.8131274,29.1736434 C26.9903475,26.9027132 29.9586873,22.7693798 30.7366795,18.0593023 C31.107722,15.7643411 30.9640927,13.4213178 30.3297297,11.1984496 Z" />
+                  </g>
+                </svg>`,
+                text: 'بعيد',
+                url: 'https://baaeed.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+                  <g id="Academy" fill-rule="nonzero">
+                    <rect id="rect26" fill="#616571" x="0" y="0.767" width="52.928" height="52.93"/>
+                    <g id="icon" transform="translate(11, 15)" fill="#F4F4F4">
+                      <path d="M14.852,8.535 L21.098,8.535 L21.811,5.064 L17.458,5.064 C14.357,5.064 11.766,5.834 9.685,7.373 C7.759,8.797 6.46,11.115 5.785,14.318 L5.312,17.074 L23.135,17.078 L23.69,14.379 L13.56,14.377 L14.852,8.535 Z" opacity="0.2"/>
+                      <polygon opacity="0.5" points="24.417 25.111 24.965 22.371 1.488 22.371 0.933 25.111"/>
+                      <path d="M25.493,19.81 L27.956,7.652 L24.027,7.65 L25.465,0.318 L17.399,0.316 C13.854,0.316 10.807,1.242 8.336,3.064 C5.752,4.976 4.234,8.029 3.518,12.185 L2,19.81 L25.493,19.81 Z M6.066,12.675 C6.655,9.237 7.968,6.745 9.968,5.267 C11.953,3.796 14.453,3.052 17.397,3.052 L22.223,3.052 L21.096,8.534 L14.851,8.534 L14.16,11.651 L24.25,11.645 L23.134,17.075 L5.311,17.073 L6.066,12.675 Z"/>
+                    </g>
+                  </g>
+                </svg>`,
+                text: 'أكاديمية حسوب',
+                url: 'https://academy.hsoub.com',
+                target: '_blank',
+              },
+            },
+          },
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53">
+                          <rect width="53" height="53" fill="#062E83" /><g transform="scale(1.1687)">
+                          <path fill="#fff" d="M8.41,17.23c-.24-.14-.44-.33-.57-.57-.14-.24-.21-.49-.21-.75s.06-.51.21-.76c.13-.24.32-.42.57-.55.23-.13.48-.19.73-.19s.5.06.73.19c.24.13.44.31.58.55.13.24.19.5.19.76s-.06.5-.19.75c-.13.23-.32.42-.57.57-.24.13-.49.19-.75.19s-.5-.06-.73-.19Z" />
+                          <path fill="#fff" d="M12.03,17.23c-.24-.14-.44-.33-.57-.57-.14-.24-.21-.49-.21-.75s.06-.51.21-.76c.13-.24.32-.42.57-.55.23-.13.48-.19.73-.19s.5.06.73.19c.24.13.44.31.58.55.13.24.19.5.19.76s-.06.5-.19.75c-.13.23-.32.42-.57.57-.24.13-.49.19-.75.19s-.5-.06-.73-.19Z"/>
+                          <path fill="#fff" d="M31.53,17.23c-.24-.14-.44-.33-.57-.57-.14-.24-.21-.49-.21-.75s.06-.51.21-.76c.13-.24.32-.42.57-.55.23-.13.48-.19.73-.19s.5.06.73.19c.24.13.44.31.58.55.13.24.19.5.19.76s-.06.5-.19.75c-.13.23-.32.42-.57.57-.24.13-.49.19-.75.19s-.5-.06-.73-.19Z" />
+                          <path fill="#fff" d="M22.34,31.04c-.24-.14-.44-.33-.57-.57-.14-.24-.21-.49-.21-.75s.06-.51.21-.76c.13-.24.32-.42.57-.55.23-.13.48-.19.73-.19s.5.06.73.19c.24.13.44.31.58.55.13.24.19.5.19.76s-.06.5-.19.75c-.13.23-.32.42-.57.57-.24.13-.49.19-.75.19s-.5-.06-.73-.19Z" />
+                          <path fill="#fff" d="M37.94,19.61c-.85-.76-1.99-1.18-3.23-1.18h-5.41c-.74,0-1.34.6-1.34,1.34s.6,1.34,1.34,1.34h5.41c.91,0,1.97.46,1.97,1.75,0,.93-.71,1.68-1.58,1.68h-8.98v-2.09c0-2.22-1.68-4.02-3.75-4.02-1.67,0-2.95,1.2-3.4,2.93l-1.24,5.56c-.45,1.49-1.13,1.63-1.58,1.63h-1.54c-.74,0-1.34.6-1.34,1.34s.6,1.34,1.34,1.34h1.85c1.67,0,3.15-1.2,3.6-2.93l1.49-6.26c.14-.55.35-.93.81-.93.58,0,1.07.62,1.07,1.34v3.43c0,.74.6,1.34,1.34,1.34.01,0,.02,0,.04,0h10.28c2.35,0,4.25-1.96,4.25-4.36,0-1.28-.5-2.43-1.41-3.25Z" />
+                          <path fill="#fff" d="M11.9,18.43h-1.9c-2.21,0-4.01,1.8-4.01,4.01v.77c0,2.21,1.8,4.01,4.01,4.01h2.89s.06,0,.09,0c1.63-.05,2.93-1.4,2.93-3.06v-1.72c0-2.21-1.8-4.01-4.01-4.01ZM13.24,24.5s-.02.04-.04.04h-3.19s-.08,0-.11,0c-.68-.06-1.22-.63-1.22-1.33v-.77c0-.74.6-1.33,1.33-1.33h1.9c.13,0,.26.02.37.05.55.16.96.67.96,1.28v2.06Z" /></g>
+                        </svg>`,
+                text: 'خبرة',
+                url: 'https://khbra.com',
+                target: '_blank',
+                },
+              },
+          },
+        ]
+      },
+      {
+        columns: [
+          {
+            control: {
+              type: 'icons',
+              config: {
+                icon: `<svg xmlns="http://www.w3.org/2000/svg" width="53" height="53" viewBox="0 0 53 53" fill="none">
+                  <g id="IO" fill-rule="nonzero">
+                    <rect id="rect36" fill="#F26A38" x="0" y="0.197" width="52.928" height="52.926"/>
+                    <path d="M10.692,14.154 C10.849,14.16 11.007,14.172 11.163,14.172 C14.913,14.172 18.662,14.172 22.41,14.172 L22.899,14.172 C22.195,23.029 21.494,31.834 20.794,40.643 C20.769,40.645 20.742,40.657 20.718,40.661 C20.332,39.763 19.944,38.862 19.558,37.962 C19.052,36.773 18.54,35.597 18.052,34.407 C17.935,34.128 17.797,34.011 17.475,34.011 C15.345,34.032 13.214,34.019 11.083,34.023 C10.952,34.023 10.822,34.044 10.692,34.054 L10.692,14.154 Z M14.225,23.824 C14.225,25.941 14.23,28.056 14.218,30.174 C14.217,30.492 14.298,30.615 14.635,30.613 C15.463,30.59 16.293,30.592 17.121,30.603 C17.412,30.615 17.506,30.513 17.504,30.222 C17.496,25.993 17.496,21.751 17.505,17.519 C17.506,17.195 17.38,17.124 17.089,17.128 C16.286,17.144 15.484,17.149 14.682,17.126 C14.321,17.114 14.213,17.224 14.217,17.589 C14.236,19.667 14.225,21.746 14.225,23.824 Z" 
+                          fill="#FFFFFF"/>
+                    <path d="M21.835,40.646 C22.887,31.835 23.938,23.021 24.991,14.193 L42.238,14.193 L42.238,34.019 L41.717,34.019 C36.735,34.019 31.742,34.023 26.759,34.011 C26.415,34.007 26.22,34.116 26.035,34.406 C24.743,36.386 23.433,38.359 22.131,40.336 C22.06,40.445 21.985,40.553 21.913,40.662 C21.887,40.656 21.859,40.652 21.835,40.646 M33.402,30.595 C37.181,30.605 40.232,27.62 40.242,23.907 C40.252,20.167 37.24,17.149 33.484,17.136 C29.679,17.124 26.629,20.111 26.623,23.845 C26.618,27.58 29.639,30.589 33.402,30.595" 
+                          fill="#FFFFFF"/>
+                    <path d="M37.045,23.898 C37.051,25.865 35.402,27.543 33.451,27.556 C31.494,27.574 29.812,25.872 29.82,23.892 C29.83,21.919 31.488,20.249 33.433,20.251 C35.381,20.255 37.039,21.929 37.045,23.898" 
+                          fill="#FFFFFF"/>
+                  </g>
+                </svg>`,
+                text: 'حسوب I/O',
+                url: 'https://io.hsoub.com',
+                target: '_blank',
+              },
+            },
+          },
+        ],
+      },
+    ],
+  };
+
+  var logoConfig = {
+    id: 'logo',
+    url: '/',
+    images: [
+     {
+         visible: {desktop: true, tablet: true, mobile: false},
+         src: 'https://khamsat.hsoubcdn.com/assets/images/logo-73045c76e830509d4dbe03ea6172d22f047c708fed5435e93ffd47f80ee5ffa4.png'
+     }, {
+         visible: {desktop: false, tablet: false, mobile: true},
+         src: 'https://khamsat.hsoubcdn.com/assets/images/logo-mobile-215fffeb86f5121a190d2551c62feea201ca1b4e0d5ea7feef9f5aa04a55dac4.png'
+     }
+   ]
+  }
+
+  var searchConfig = {
+    action: '/search',
+    method: 'get',
+    placeholder: 'ابحث عن ...',
+    name: 'q'
+  }
+
+  var sectionsConfig = {
+    id:'megamenu',
+    width: '100%',
+    align: 'left',
+    rows: [{"columns":[{"control":{"type":"bullets","config":{"text":"تصميم","url":"/designing","items":[{"text":"تصاميم سوشيال ميديا","url":"/designing/social-media-design"},{"text":"تصميم وتعديل شعارات","url":"/designing/logo-services"},{"text":"تصميم سيرة ذاتية","url":"/designing/resume-design"},{"text":"تصميم هوية بصرية","url":"/designing/brand-identity-design"},{"text":"تصميم جرافيك AI","url":"/designing/ai-design"}]}}},{"control":{"type":"bullets","config":{"text":"برمجة وتطوير","url":"/programming","items":[{"text":"اختبار ضمان الجودة","url":"/programming/qa-testing"},{"text":"تطوير مواقع","url":"/programming/website-development"},{"text":"إنشاء متجر إلكتروني","url":"/programming/ecommerce-development"},{"text":"ووردبريس","url":"/programming/wordpress"},{"text":"تطوير الذكاء الاصطناعي","url":"/programming/ai-development"}]}}},{"control":{"type":"bullets","config":{"text":"فيديو وأنيميشن","url":"/video-design","items":[{"text":"إنتاج فيديو UGC","url":"/video-design/ugc-videos"},{"text":"مونتاج فيديو","url":"/video-design/video-editing"},{"text":"فيديوهات سوشيال ميديا","url":"/video-design/social-media-videos"},{"text":"فيديوهات قصيرة","url":"/video-design/short-videos"},{"text":"تصميم فيديو AI","url":"/video-design/ai-video-animation"}]}}},{"control":{"type":"bullets","config":{"text":"ذكاء اصطناعي وتعلم الآلة","url":"/ai-machine-learning","items":[{"text":"أتمتة ووكلاء AI","url":"/ai-machine-learning/ai-agent-automation"},{"text":"علم البيانات وتعلم الآلة","url":"/ai-machine-learning/data-science-ml"}]}}}]},{"columns":[{"control":{"type":"bullets","config":{"text":"هندسة وعمارة","url":"/engineering","items":[{"text":"تصميم داخلي وديكور","url":"/engineering/interior-design"},{"text":"تصميم خارجي وواجهات","url":"/engineering/exterior-design"},{"text":"تصميم مخططات معمارية","url":"/engineering/architectural-plans"},{"text":"تصميم إنشائي","url":"/engineering/structural-design"},{"text":"تصميم ميكانيكي","url":"/engineering/mechanical-design"}]}}},{"control":{"type":"bullets","config":{"text":"تسويق رقمي","url":"/marketing","items":[{"text":"إعلانات مواقع التواصل","url":"/marketing/social-media-ads"},{"text":"إعلانات جوجل","url":"/marketing/google-ads"},{"text":"التسويق عبر المؤثرين","url":"/marketing/influencer-marketing"},{"text":"جيست بوست","url":"/marketing/guest-posts"},{"text":"إدارة حسابات التواصل","url":"/marketing/social-media-management"}]}}},{"control":{"type":"bullets","config":{"text":"أعمال","url":"/business","items":[{"text":"دراسة جدوى","url":"/business/feasibility-study"},{"text":"خدمات مالية ومحاسبية","url":"/business/finance-services"},{"text":"خدمات قانونية","url":"/business/legal-services"},{"text":"إدارة التجارة الإلكترونية","url":"/business/ecommerce-services"},{"text":"تخطيط موارد مؤسسات ERP","url":"/business/erp"}]}}},{"control":{"type":"bullets","config":{"text":"صوتيات","url":"/audio","items":[{"text":"تعليق صوتي","url":"/audio/voice-over"},{"text":"هندسة صوتية","url":"/audio/mixing"},{"text":"إنتاج وتلحين موسيقي","url":"/audio/producers-composers"},{"text":"غناء","url":"/audio/singing"},{"text":"تعليق صوتي AI","url":"/audio/ai-audio"}]}}}]},{"columns":[{"control":{"type":"bullets","config":{"text":"تنمية شخصية وهوايات","url":"/lifestyle","items":[{"text":"استشارات شخصية","url":"/lifestyle/life-coaching"},{"text":"توجيه وإرشاد مهني","url":"/lifestyle/career-counseling"},{"text":"صحة وتغذية","url":"/lifestyle/nutrition"},{"text":"لياقة بدنية","url":"/lifestyle/fitness-lessons"}]}}},{"control":{"type":"bullets","config":{"text":"كتابة وترجمة","url":"/writing","items":[{"text":"محتوى مواقع","url":"/writing/website-content"},{"text":"محتوى دراسي ومهني","url":"/writing/career-study-writing"},{"text":"كتابة إبداعية","url":"/writing/creative-writing"},{"text":"تدقيق محتوى AI","url":"/writing/ai-content"}]}}}]}]
+  }
+
+  var mainSectionsItem = { icon: 'cubes', text: 'التصنيفات', visible: {desktop: true, tablet: true, mobile: true}, active: false,
+    menu:{
+      items: [{"text":"تصميم","url":"/designing"},{"text":"برمجة وتطوير","url":"/programming"},{"text":"فيديو وأنيميشن","url":"/video-design"},{"text":"ذكاء اصطناعي وتعلم الآلة","url":"/ai-machine-learning"},{"text":"هندسة وعمارة","url":"/engineering"},{"text":"تسويق رقمي","url":"/marketing"},{"text":"أعمال","url":"/business"},{"text":"صوتيات","url":"/audio"},{"text":"تنمية شخصية وهوايات","url":"/lifestyle"},{"text":"كتابة وترجمة","url":"/writing"}]
+    }
+  }
+
+  var communityItem = {icon: 'comments', text: 'مجتمع خمسات', url: '/community'}
+
+  var activeCommunityItem = JSON.parse(JSON.stringify(communityItem))
+  activeCommunityItem['active'] = true
+
+  var solutionsItem = { icon: 'briefcase', text: 'حلول الأعمال', visible: {desktop: true, tablet: true, mobile: true}, active: false,
+    menu:{
+      items: [
+        {text: 'حوّل أعمالك للعالم الرقمي', url: '/move-offline-business-to-online'},
+        {text: 'ابدأ مشروعك التجاري', url: '/start-business'},
+        {text: 'أنشئ متجرك الإلكتروني', url: '/start-ecommerce'},
+        {text: 'أطلق موقعك الإلكتروني', url: '/create-website'},
+        {text: 'أنشئ موقعك على ووردبريس', url: '/start-wordpress-website'},
+        {text: 'حلول التسويق الرقمي', url: '/online-marketing-solutions'},
+        {text: 'ضع بصمتك في عالم المؤثرين', url: '/influencer-solutions'},
+        {text: 'خدمات سوشيال ميديا', url: '/social-media-services'}
+      ]
+    }
+  }
+
+  var landingPageSolutionsItem = { icon: 'briefcase', text: 'حلول الأعمال', visible: {desktop: true, tablet: true, mobile: true}, active: false,
+    menu:{
+      items: [
+        {text: 'حوّل أعمالك للعالم الرقمي', url: '/move-offline-business-to-online'},
+        {text: 'ابدأ مشروعك التجاري', url: '/start-business'},
+        {text: 'أنشئ متجرك الإلكتروني', url: '/start-ecommerce'},
+        {text: 'أطلق موقعك الإلكتروني', url: '/create-website'},
+        {text: 'أنشئ موقعك على ووردبريس', url: '/start-wordpress-website'},
+        {text: 'حلول التسويق الرقمي', url: '/online-marketing-solutions'},
+        {text: 'ضع بصمتك في عالم المؤثرين', url: '/influencer-solutions'},
+        {text: 'خدمات سوشيال ميديا', url: '/social-media-services'}
+      ]
+    }
+  }
+
+  var activeSolutionsItem = JSON.parse(JSON.stringify(solutionsItem))
+  activeSolutionsItem['active'] = true
+
+  var aboutItem = { icon: 'file-text', text: 'خمسات', visible: {desktop: true, tablet: true, mobile: true}, active: false,
+    menu:{
+      items: [
+        {text: 'حول خمسات', url: '/about'},
+        {text: 'كيف يعمل الموقع', url: '/how'},
+        {text: 'الأسئلة الشائعة', url: '/faq'},
+        {text: 'ضمان الحقوق', url: '/guarantee'},
+        {text: 'شروط الاستخدام', url:'/terms'},
+        {text: 'بيان الخصوصية', url:'/privacy'},
+        {text: 'المستويات', url:'/levels'},
+        {text: 'التسويق بالعمولة', url:'/affiliates'},
+        {text: 'البيع على خمسات', url:'/freelance'},
+        {text: 'مركز المساعدة', url: '/r/helpdesk'}
+      ]
+    }
+  }
+
+  var activeAboutItem = JSON.parse(JSON.stringify(aboutItem))
+  activeAboutItem['active'] = true
+
+  var followingItem = { icon: 'hashtag', text: 'تابعنا', visible: {desktop: true, tablet: true, mobile: true}, active: false,
+    menu:{
+      items: [
+        {text: 'مدونة خمسات', url: 'https://blog.khamsat.com'},
+        {text: 'تويتر', url: 'https://twitter.com/KhamsatDotCom'},
+        {text: 'فيسبوك', url: 'https://www.facebook.com/KhamsatDotCom'}
+      ]
+    }
+  }
+
+  var activeFollowingItem = JSON.parse(JSON.stringify(followingItem))
+  activeFollowingItem['active'] = true
+
+
+    var mainMenuItems = [
+      { icon: 'cubes', text: 'التصنيفات', visible: {desktop: true, tablet: true, mobile: false}, addon: {type: 'megamenu', config: sectionsConfig } },
+    ]
+
+      var minorMenuConfig = {
+        id: 'minormenu',
+        items: [
+          {icon: 'search', title: 'بحث', visible: { desktop: true, tablet: true, mobile: false }, addon: { type: 'search', config: searchConfig }},
+          {id: 'cartTrigger', icon: 'shopping-cart', large: true, url: '/cart', badge: 0, visible: { desktop: true, tablet: true, mobile: true }},
+          {icon: 'sign-in', text: 'دخول', url: '/login?t=e0a438b4fc4f700b88539a09f1152ad8', button: true, justified: true, visible: { desktop: true, tablet: true, mobile: true} },
+          {icon: 'user-plus', text: 'حساب جديد', url: '/register?t=e0a438b4fc4f700b88539a09f1152ad8', button: true, visible: { desktop: true, tablet: true, mobile: false} },
+        ]
+      }
+
+    var sidebarMenu = {
+      id: 'sidebarMenu',
+      items: [
+        {icon: 'sign-in', text: 'دخول', url: '/login?t=e0a438b4fc4f700b88539a09f1152ad8', button: true, justified: true, visible: { desktop: true, tablet: true, mobile: true} },
+        {icon: 'user-plus', text: 'حساب جديد', url: '/register?t=e0a438b4fc4f700b88539a09f1152ad8', button: true, visible: { desktop: true, tablet: true, mobile: true} },
+        mainSectionsItem,
+        landingPageSolutionsItem,
+        aboutItem,
+        communityItem,
+        followingItem
+      ]
+    }
+
+  var launcher_badge_count = 0
+
+  var sidebarConfig = {
+    id: 'sidebar',
+    search: searchConfig,
+    menu: sidebarMenu
+  }
+
+  var launcherConfig = {
+    id: 'headerLauncher',
+    badge: screen.width < 991 && launcher_badge_count > 0 ? launcher_badge_count : 0,
+    visible: { desktop: true, tablet: true, mobile: true },
+    sidebar: sidebarConfig
+  }
+
+  var mainMenuConfig = {
+    id: 'mainMenu',
+    items: mainMenuItems
+  }
+
+  var HeaderConfig = {
+   visible: { desktop: true, tablet: false, mobile: false },
+   boxed: true,
+   logo: logoConfig,
+   launcher: launcherConfig,
+   minormenu: minorMenuConfig,
+   mainmenu: mainMenuConfig
+  }
+
+  var tabMenu = {
+    id: 'tabMenu',
+    items: [
+      activeSolutionsItem,
+      activeCommunityItem,
+      activeAboutItem,
+      activeFollowingItem
+    ]
+  }
+
+  const MenuTab = {
+    id: 'menu',
+    title: 'القائمة',
+    menu: tabMenu
+  }
+
+    var accountMenu = {
+      id: 'accountMenu',
+      items: [
+        {icon: 'sign-in', text: 'تسجيل الدخول', url: '/login?t=e0a438b4fc4f700b88539a09f1152ad8'},
+        {icon: 'user-plus', text: 'حساب جديد', url: '/register?t=e0a438b4fc4f700b88539a09f1152ad8'},
+      ]
+    }
+
+  const AccountsTab = {
+    id: 'menu',
+    title: 'حسابي',
+    menu: accountMenu
+  }
+
+  const searchTab = {
+    id: 'search',
+    title: 'بحث',
+    search: searchConfig,
+    menu:{
+      items: [{"text":"تصميم","url":"/designing","active":false,"menu":{"items":[{"text":"تصاميم سوشيال ميديا","url":"/designing/social-media-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>منشورات سوشيال ميديا","url":"/designing/social-posts-banners"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات سوشيال ميديا","url":"/designing/design-social-media-ads"},{"text":"<span>&nbsp;&nbsp;</span>صور مصغّرة","url":"/designing/thumbnails-design"},{"text":"<span>&nbsp;&nbsp;</span>غلاف سوشيال ميديا","url":"/designing/social-media-covers"},{"text":"<span>&nbsp;&nbsp;</span>فلاتر وعدسات  وهايلايتس","url":"/designing/filters-lenses"},{"text":"<span>&nbsp;&nbsp;</span>ملصقات تطبيقات التواصل","url":"/designing/social-media-stickers"}]}},{"text":"تصميم وتعديل شعارات","url":"/designing/logo-services","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم شعار","url":"/designing/logo-design"},{"text":"<span>&nbsp;&nbsp;</span>شعار نصّي","url":"/designing/calligraphy-logo"},{"text":"<span>&nbsp;&nbsp;</span>شعار 3D","url":"/designing/3d-logo"},{"text":"<span>&nbsp;&nbsp;</span>تحسين شعارات","url":"/designing/logo-enhance"}]}},{"text":"تصميم مواقع وتطبيقات","url":"/designing/web-app-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم تطبيق","url":"/designing/app-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم موقع","url":"/designing/website-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم صفحة هبوط","url":"/designing/landing-page-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم لوحة تحكم","url":"/designing/dashboard-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم أيقونات","url":"/designing/icon-design"}]}},{"text":"تصاميم تسويقية","url":"/designing/marketing-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم بنرات إعلانية","url":"/designing/banners-design"},{"text":"<span>&nbsp;&nbsp;</span>عبوات وأغلفة منتجات","url":"/designing/packaging"}]}},{"text":"تصميم جرافيك AI","url":"/designing/ai-design"},{"text":"تصاميم توضيحية","url":"/designing/illustrative-designs","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم عروض تقديمية","url":"/designing/presentation"},{"text":"<span>&nbsp;&nbsp;</span>تصميم حقائب تدريبية","url":"/designing/training-packages"},{"text":"<span>&nbsp;&nbsp;</span>تصميم إنفوجرافيك","url":"/designing/infographics-design"},{"text":"<span>&nbsp;&nbsp;</span>رسوم ومخططات بيانية","url":"/designing/charts-graphs"},{"text":"<span>&nbsp;&nbsp;</span>تصميم خرائط ذهنية","url":"/designing/mindmap-design"}]}},{"text":"تصاميم مهنية","url":"/designing/career-designs","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم سيرة ذاتية","url":"/designing/resume-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم بطاقة عمل","url":"/designing/business-cards"}]}},{"text":"تصميم كتب ومطبوعات","url":"/designing/book-print-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>فلاير وبروشور ورول اب","url":"/designing/brochure-flyer"},{"text":"<span>&nbsp;&nbsp;</span>تصميم غلاف كتاب","url":"/designing/covers-design"},{"text":"<span>&nbsp;&nbsp;</span>تنسيق كتب","url":"/designing/book-layout-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم كتب أطفال","url":"/designing/kids-book-design"},{"text":"<span>&nbsp;&nbsp;</span>مطبوعات مكتبية","url":"/designing/stationery"},{"text":"<span>&nbsp;&nbsp;</span>تصميم منيو","url":"/designing/menu-design"}]}},{"text":"تصاميم العلامة التجارية","url":"/designing/brand-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم هوية بصرية","url":"/designing/brand-identity-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم بروفايل شركة","url":"/designing/company-profile-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم QR Code","url":"/designing/qr-code-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم ختم","url":"/designing/stamp-design"}]}},{"text":"تعديل وتحسين الصور","url":"/designing/image-editing-enhancement","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تعديل الصور","url":"/designing/photo-editing"},{"text":"<span>&nbsp;&nbsp;</span>إزالة خلفية الصور","url":"/designing/background-removal"},{"text":"<span>&nbsp;&nbsp;</span>ترميم صور قديمة","url":"/designing/photo-restoration"},{"text":"<span>&nbsp;&nbsp;</span>تعديل صور منتجات","url":"/designing/product-image-editing"},{"text":"<span>&nbsp;&nbsp;</span>تحويل إلى Vector","url":"/designing/vector-tracing"}]}},{"text":"فن ورسم","url":"/designing/art-drawing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصاميم الألعاب","url":"/designing/game-art"},{"text":"<span>&nbsp;&nbsp;</span>رسوم كرتونية","url":"/designing/cartoons"},{"text":"<span>&nbsp;&nbsp;</span>بورتريه وكاريكاتير","url":"/designing/portrait-and-caricature"},{"text":"<span>&nbsp;&nbsp;</span>تصميم شخصيات 3d","url":"/designing/3d-character-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم خلفيات","url":"/designing/background-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم ستوري بورد","url":"/designing/storyboard-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم رموز NFT","url":"/designing/nft"}]}},{"text":"تصاميم 3d","url":"/designing/3d-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم منتجات","url":"/designing/3d-product-design"},{"text":"<span>&nbsp;&nbsp;</span>تصاميم صناعية","url":"/designing/industrial-engineering"},{"text":"<span>&nbsp;&nbsp;</span>تصاميم CNC","url":"/designing/cnc-design"},{"text":"<span>&nbsp;&nbsp;</span>طباعة ثلاثية الأبعاد","url":"/designing/3d-printing"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/designing/3d-design-services"}]}},{"text":"دعوات وتهنئة ومعايدات","url":"/designing/invitations-greetings-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>دعوات زواج","url":"/designing/wedding-invitation"},{"text":"<span>&nbsp;&nbsp;</span>أعياد ومناسبات","url":"/designing/feasts-designs"},{"text":"<span>&nbsp;&nbsp;</span>شهادات شكر وتقدير","url":"/designing/certificates"}]}},{"text":"تصميم أزياء وإكسسوارات","url":"/designing/fashion-accessories","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم تيشرتات","url":"/designing/t-shirts"},{"text":"<span>&nbsp;&nbsp;</span>تصميم أزياء","url":"/designing/fashion-design"},{"text":"<span>&nbsp;&nbsp;</span>مجوهرات وإكسسوارات","url":"/designing/jewelry-design"}]}},{"text":"تصاميم نصيّة إبداعية","url":"/designing/creative-design","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم مخطوطات","url":"/designing/calligraphy"},{"text":"<span>&nbsp;&nbsp;</span>تصميم توقيع","url":"/designing/signature"}]}},{"text":"أخرى","url":"/designing/designing-services"}]}},{"text":"برمجة وتطوير","url":"/programming","active":false,"menu":{"items":[{"text":"اختبار ضمان الجودة","url":"/programming/qa-testing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>اختبار برمجيات","url":"/programming/software-testing"},{"text":"<span>&nbsp;&nbsp;</span>مراجعة أكواد برمجية","url":"/programming/code-review"}]}},{"text":"تطوير مواقع","url":"/programming/website-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إنشاء موقع إلكتروني","url":"/programming/custom-website-development"},{"text":"<span>&nbsp;&nbsp;</span>إنشاء صفحة هبوط","url":"/programming/landing-page-development"},{"text":"<span>&nbsp;&nbsp;</span>إصلاح أخطاء المواقع","url":"/programming/bug-fixes"},{"text":"<span>&nbsp;&nbsp;</span>تخصيص وتعديل المواقع","url":"/programming/website-customization"},{"text":"<span>&nbsp;&nbsp;</span>تحويل تصميم لموقع","url":"/programming/convert-psd"},{"text":"<span>&nbsp;&nbsp;</span>حماية وتأمين المواقع","url":"/programming/website-security"},{"text":"<span>&nbsp;&nbsp;</span>نسخ احتياطي ونقل استضافة","url":"/programming/backup-and-migration"},{"text":"<span>&nbsp;&nbsp;</span>مدونات بلوجر","url":"/programming/blogger"}]}},{"text":"تطوير تطبيقات جوال","url":"/programming/mobile-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إنشاء تطبيق","url":"/programming/full-app-creation"},{"text":"<span>&nbsp;&nbsp;</span>تعديل التطبيقات","url":"/programming/app-customization"},{"text":"<span>&nbsp;&nbsp;</span>إصلاح مشكلات التطبيقات","url":"/programming/app-bug-fix"},{"text":"<span>&nbsp;&nbsp;</span>تحويل موقع إلى تطبيق","url":"/programming/convert-site-to-app"},{"text":"<span>&nbsp;&nbsp;</span>تحويل تصميم إلى تطبيق","url":"/programming/convert-design-to-app"},{"text":"<span>&nbsp;&nbsp;</span>رفع التطبيقات على المتاجر","url":"/programming/upload-app-to-store"}]}},{"text":"إنشاء متجر إلكتروني","url":"/programming/ecommerce-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>شوبيفاي","url":"/programming/shopify-development"},{"text":"<span>&nbsp;&nbsp;</span>ووكومرس","url":"/programming/woocommerce-development"},{"text":"<span>&nbsp;&nbsp;</span>سلة","url":"/programming/salla-development"},{"text":"<span>&nbsp;&nbsp;</span>أوبن كارت","url":"/programming/opencart-development"},{"text":"<span>&nbsp;&nbsp;</span>زد","url":"/programming/zid-development"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/programming/ecommerce-development-services"}]}},{"text":"ووردبريس","url":"/programming/wordpress","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إنشاء موقع ووردبريس","url":"/programming/wordpress-website-creation"},{"text":"<span>&nbsp;&nbsp;</span>تنصيب ووردبريس","url":"/programming/wp-installation-setup"},{"text":"<span>&nbsp;&nbsp;</span>إصلاح مشكلات ووردبريس","url":"/programming/wordpress-bug-fixes"},{"text":"<span>&nbsp;&nbsp;</span>تخصيص وتعديل ووردبريس","url":"/programming/wordpress-customization"},{"text":"<span>&nbsp;&nbsp;</span>تحسين سرعة ووردبريس","url":"/programming/wordpress-performance"},{"text":"<span>&nbsp;&nbsp;</span>إضافات ووردبريس","url":"/programming/wordpress-plugins"},{"text":"<span>&nbsp;&nbsp;</span>تعريب قوالب ووردبريس","url":"/programming/wordpress-localization"},{"text":"<span>&nbsp;&nbsp;</span>حماية ووردبريس","url":"/programming/wordpress-security"},{"text":"<span>&nbsp;&nbsp;</span>نسخ احتياطي ونقل استضافة","url":"/programming/wp-backup-and-migration"}]}},{"text":"تطوير برمجيات","url":"/programming/software-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>استخراج بيانات المواقع","url":"/programming/web-scraping"},{"text":"<span>&nbsp;&nbsp;</span>كتابة أكواد برمجية","url":"/programming/scripting"},{"text":"<span>&nbsp;&nbsp;</span>قواعد بيانات","url":"/programming/databases"},{"text":"<span>&nbsp;&nbsp;</span>تطبيقات سطح المكتب","url":"/programming/desktop-app"},{"text":"<span>&nbsp;&nbsp;</span>إنشاء تطبيق ويب","url":"/programming/web-application-development"},{"text":"<span>&nbsp;&nbsp;</span>واجهات API وتكاملات","url":"/programming/api-integrations"},{"text":"<span>&nbsp;&nbsp;</span>تطوير شات بوت","url":"/programming/chatbots-development"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة ERP و CRM","url":"/programming/erp-crm-development"},{"text":"<span>&nbsp;&nbsp;</span>بوابات دفع إلكتروني","url":"/programming/payment-gateways"},{"text":"<span>&nbsp;&nbsp;</span>تطوير ألعاب","url":"/programming/game-development"}]}},{"text":"دعم فني تقني","url":"/programming/it-support","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>سيرفرات ولينكس","url":"/programming/linux"},{"text":"<span>&nbsp;&nbsp;</span>شبكات","url":"/programming/computer-networks"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة تشغيل وبرمجيات","url":"/programming/os-software-support"},{"text":"<span>&nbsp;&nbsp;</span>استضافات ونطاقات","url":"/programming/hosting-domain"},{"text":"<span>&nbsp;&nbsp;</span>أمن وحماية بيانات","url":"/programming/cybersecurity-data-protection"},{"text":"<span>&nbsp;&nbsp;</span>إدارة البريد الإلكتروني","url":"/programming/email-management"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/programming/it-support-services"}]}},{"text":"تعلم البرمجة","url":"/programming/learn-programming"},{"text":"تطوير الذكاء الاصطناعي","url":"/programming/ai-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تكاملات وربط تقني AI","url":"/programming/ai-integrations"},{"text":"<span>&nbsp;&nbsp;</span>تطوير AI Chatbot","url":"/programming/ai-chatbot"}]}},{"text":"أخرى","url":"/programming/programming-services"}]}},{"text":"فيديو وأنيميشن","url":"/video-design","active":false,"menu":{"items":[{"text":"إنتاج فيديو UGC","url":"/video-design/ugc-videos","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>UGC بالذكاء الاصطناعي","url":"/video-design/ai-ugc"},{"text":"<span>&nbsp;&nbsp;</span>UGC بشري","url":"/video-design/human-ugc"}]}},{"text":"تحرير الفيديو","url":"/video-design/video-edit-montage","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>مونتاج فيديو","url":"/video-design/video-editing"},{"text":"<span>&nbsp;&nbsp;</span>تصميم انترو","url":"/video-design/video-intro"},{"text":"<span>&nbsp;&nbsp;</span>ترجمة فيديو","url":"/video-design/translate-videos"},{"text":"<span>&nbsp;&nbsp;</span>مؤثرات بصرية  VFX و CGI","url":"/video-design/vfx-cgi"}]}},{"text":"أنيميشن وموشن جرافيك","url":"/video-design/animation-motion-graphics","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>أنيميشن 2D","url":"/video-design/2d-animation"},{"text":"<span>&nbsp;&nbsp;</span>أنيميشن 3D","url":"/video-design/3d-animation"},{"text":"<span>&nbsp;&nbsp;</span>موشن جرافيك","url":"/video-design/motion-graphics"},{"text":"<span>&nbsp;&nbsp;</span>وايت بورد","url":"/video-design/white-board"},{"text":"<span>&nbsp;&nbsp;</span>تحريك شعار","url":"/video-design/logo-animation"},{"text":"<span>&nbsp;&nbsp;</span>رسوم متحركة للأطفال","url":"/video-design/animation-for-kids"},{"text":"<span>&nbsp;&nbsp;</span>تحريك شخصيات","url":"/video-design/animation"}]}},{"text":"تصميم فيديو AI","url":"/video-design/ai-video-animation"},{"text":"فيديوهات سوشيال وإعلانات","url":"/video-design/social-media-platforms-videos","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>فيديوهات سوشيال ميديا","url":"/video-design/social-media-videos"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات قصيرة","url":"/video-design/short-videos"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات يوتيوب","url":"/video-design/youtube-videos"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات إعلانية","url":"/video-design/video-ads"}]}},{"text":"إنتاج الفيديو","url":"/video-design/video-production","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>دعوات وتهنئة ومعايدات","url":"/video-design/invitations-greetings"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات شرح وتعليم","url":"/video-design/explainer-video"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات منتجات 3D","url":"/video-design/product-video"},{"text":"<span>&nbsp;&nbsp;</span>فيديوهات دينية","url":"/video-design/islamic-videos"}]}},{"text":"أخرى","url":"/video-design/video-design-services"}]}},{"text":"ذكاء اصطناعي وتعلم الآلة","url":"/ai-machine-learning","active":false,"menu":{"items":[{"text":"أتمتة ووكلاء AI","url":"/ai-machine-learning/ai-agent-automation"},{"text":"علم البيانات وتعلم الآلة","url":"/ai-machine-learning/data-science-ml"}]}},{"text":"هندسة وعمارة","url":"/engineering","active":false,"menu":{"items":[{"text":"استشارات وشروحات هندسية","url":"/engineering/engineering-consultations-tutoring","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>استشارات هندسية","url":"/engineering/consulting-engineering"},{"text":"<span>&nbsp;&nbsp;</span>شروحات هندسية","url":"/engineering/learn-engineering"}]}},{"text":"هندسة معمارية","url":"/engineering/architectural-engineering","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم داخلي وديكور","url":"/engineering/interior-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم خارجي وواجهات","url":"/engineering/exterior-design"},{"text":"<span>&nbsp;&nbsp;</span>تصميم مخططات معمارية","url":"/engineering/architectural-plans"},{"text":"<span>&nbsp;&nbsp;</span>إظهار معماري","url":"/engineering/architectural-visualization"},{"text":"<span>&nbsp;&nbsp;</span>تصميم حدائق ولاند سكيب","url":"/engineering/landscape-design"},{"text":"<span>&nbsp;&nbsp;</span>تصاميم معمارية تجارية","url":"/engineering/commercial-architectural-designs"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/engineering/architectural-engineering-services"}]}},{"text":"هندسة مدنية وإنشائية","url":"/engineering/civil-structural-engineering","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم إنشائي","url":"/engineering/structural-design"},{"text":"<span>&nbsp;&nbsp;</span>حساب كميات الإنشاءات","url":"/engineering/quantity-surveying"},{"text":"<span>&nbsp;&nbsp;</span>نظم معلومات جغرافية GIS","url":"/engineering/gis"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/engineering/civil-structural-engineering-services"}]}},{"text":"هندسة ميكانيكية","url":"/engineering/mechanical-engineering","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم ميكانيكي","url":"/engineering/mechanical-design"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة HVAC","url":"/engineering/hvac"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة مياه وصرف","url":"/engineering/plumbing-drainage-systems"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة مكافحة الحريق","url":"/engineering/fire-systems"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/engineering/mechanical-engineering-services"}]}},{"text":"هندسة كهربائية","url":"/engineering/electrical-engineering","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تصميم مخططات كهربائية","url":"/engineering/electrical-diagrams-design"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/engineering/electrical-engineering-servicse"}]}},{"text":"هندسة إلكترونيات","url":"/engineering/electronics-engineering","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>أنظمة مدمجة وIOT","url":"/engineering/embedded-systems"},{"text":"<span>&nbsp;&nbsp;</span>لوحات دوائر PCB","url":"/engineering/pcb"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/engineering/electronics-engineering-services"}]}},{"text":"أخرى","url":"/engineering/engineering-services"}]}},{"text":"تسويق رقمي","url":"/marketing","active":false,"menu":{"items":[{"text":"إعلانات مواقع التواصل","url":"/marketing/social-media-ads","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إعلانات فيس بوك","url":"/marketing/facebook-ads"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات تيك توك","url":"/marketing/tiktok-ads"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات سناب شات","url":"/marketing/snapchat-ads"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات انستقرام","url":"/marketing/instagram-ads"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات X","url":"/marketing/twitter-ads"},{"text":"<span>&nbsp;&nbsp;</span>ربط البكسل الإعلاني","url":"/marketing/analytics-tracking-setup"}]}},{"text":"التسويق عبر مواقع التواصل","url":"/marketing/social-media-marketing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تخطيط محتوى سوشيال","url":"/marketing/social-content"},{"text":"<span>&nbsp;&nbsp;</span>إدارة حسابات التواصل","url":"/marketing/social-media-management"},{"text":"<span>&nbsp;&nbsp;</span>النشر على الصفحات والمجموعات","url":"/marketing/shoutouts-promotion"},{"text":"<span>&nbsp;&nbsp;</span>تحليل أداء السوشيال","url":"/marketing/analytics-tracking-reporting"}]}},{"text":"التسويق عبر المؤثرين","url":"/marketing/influencer-marketing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر يوتيوب","url":"/marketing/youtube-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر انستقرام","url":"/marketing/instagram-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر تيك توك","url":"/marketing/tiktok-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر سناب شات","url":"/marketing/snapchat-marketing"}]}},{"text":"تحسين محركات البحث","url":"/marketing/seo","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>باك لينك","url":"/marketing/backlinks-building"},{"text":"<span>&nbsp;&nbsp;</span>تحليل سيو شامل","url":"/marketing/seo-audit"},{"text":"<span>&nbsp;&nbsp;</span>بحث كلمات مفتاحية","url":"/marketing/keyword-research"},{"text":"<span>&nbsp;&nbsp;</span>سيو متاجر إلكترونية","url":"/marketing/ecommerce-seo"},{"text":"<span>&nbsp;&nbsp;</span>سيو محلي Local SEO","url":"/marketing/local-seo"},{"text":"<span>&nbsp;&nbsp;</span>سيو يوتيوب","url":"/marketing/youtube-seo"}]}},{"text":"تسويق مباشر","url":"/marketing/direct-marketing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تسويق قوائم البيانات","url":"/marketing/database-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر واتساب","url":"/marketing/whatsapp-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر تليجرام","url":"/marketing/telegram-marketing"},{"text":"<span>&nbsp;&nbsp;</span>التسويق عبر البريد الإلكتروني","url":"/marketing/email-marketing"}]}},{"text":"خطط واستشارات تسويقية","url":"/marketing/marketing-consultant","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>خطط تسويقية","url":"/marketing/marketing-plans"},{"text":"<span>&nbsp;&nbsp;</span>استشارات تسويقية","url":"/marketing/marketing-advice"}]}},{"text":"إعلانات ونشر خارجي","url":"/marketing/ads-and-publishing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إعلانات جوجل","url":"/marketing/google-ads"},{"text":"<span>&nbsp;&nbsp;</span>جيست بوست","url":"/marketing/guest-posts"},{"text":"<span>&nbsp;&nbsp;</span>إعلانات أدلة ومنتديات","url":"/marketing/advertising"},{"text":"<span>&nbsp;&nbsp;</span>نشر صحفي","url":"/marketing/press-release-distribution"}]}},{"text":"أخرى","url":"/marketing/marketing-services"}]}},{"text":"أعمال","url":"/business","active":false,"menu":{"items":[{"text":"خدمات مالية ومحاسبية","url":"/business/finance-services","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>محاسبة ومسك دفاتر","url":"/business/accounting-bookkeeping"},{"text":"<span>&nbsp;&nbsp;</span>استشارات تداول وأسهم","url":"/business/trading-stock-analysis"},{"text":"<span>&nbsp;&nbsp;</span>قوائم مالية","url":"/business/financial-statements"},{"text":"<span>&nbsp;&nbsp;</span>محاسبة ضريبية","url":"/business/tax"},{"text":"<span>&nbsp;&nbsp;</span>تحليل مالي","url":"/business/financial-analysis"},{"text":"<span>&nbsp;&nbsp;</span>استشارات مالية ومحاسبية","url":"/business/financial-consulting"}]}},{"text":"خدمات قانونية","url":"/business/legal-services","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>مستندات وعقود قانونية","url":"/business/legal-documents"},{"text":"<span>&nbsp;&nbsp;</span>استشارات قانونية","url":"/business/legal-consulting"},{"text":"<span>&nbsp;&nbsp;</span>بحوث قانونية","url":"/business/legal-research"}]}},{"text":"إدارة التجارة الإلكترونية","url":"/business/ecommerce-services","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إضافة منتجات","url":"/business/product-data-entry"},{"text":"<span>&nbsp;&nbsp;</span>إدارة متاجر إلكترونية","url":"/business/store-management"},{"text":"<span>&nbsp;&nbsp;</span>استشارات تجارة إلكترونية","url":"/business/ecommerce-consultation"},{"text":"<span>&nbsp;&nbsp;</span>بحث عن منتجات","url":"/business/product-research"}]}},{"text":"إدارة برمجيات","url":"/business/software-management","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تخطيط موارد مؤسسات ERP","url":"/business/erp"},{"text":"<span>&nbsp;&nbsp;</span>نظم إدارة مشاريع PMS","url":"/business/project-management"},{"text":"<span>&nbsp;&nbsp;</span>إدارة علاقات عملاء CRM","url":"/business/crm"}]}},{"text":"تحليل بيانات و BI","url":"/business/data-analytics-bi","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تحليل بيانات","url":"/business/data-analytics"},{"text":"<span>&nbsp;&nbsp;</span>لوحات بيانات تفاعلية","url":"/business/data-dashboards"},{"text":"<span>&nbsp;&nbsp;</span>تنظيف ومعالجة بيانات","url":"/business/data-processing"}]}},{"text":"دعم فني وإداري","url":"/business/administrative-assistant","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>جمع بيانات","url":"/business/data-collection"},{"text":"<span>&nbsp;&nbsp;</span>إدخال بيانات","url":"/business/data-entry"},{"text":"<span>&nbsp;&nbsp;</span>خدمة عملاء","url":"/business/customer-support"},{"text":"<span>&nbsp;&nbsp;</span>مساعد افتراضي","url":"/business/virtual-assistant"},{"text":"<span>&nbsp;&nbsp;</span>تحويل ملفات","url":"/business/file-conversion"}]}},{"text":"تخطيط أعمال","url":"/business/business-planning","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>دراسة جدوى","url":"/business/feasibility-study"},{"text":"<span>&nbsp;&nbsp;</span>تأسيس مشاريع","url":"/business/business-formation"},{"text":"<span>&nbsp;&nbsp;</span>إدارة مخاطر","url":"/business/risk-management"},{"text":"<span>&nbsp;&nbsp;</span>الجودة والاعتماد ISO","url":"/business/iso"},{"text":"<span>&nbsp;&nbsp;</span>استشارات أعمال","url":"/business/business-tips"},{"text":"<span>&nbsp;&nbsp;</span>خطط عمل","url":"/business/business-plans"},{"text":"<span>&nbsp;&nbsp;</span>أسماء تجارية","url":"/business/business-names"},{"text":"<span>&nbsp;&nbsp;</span>بحث السوق","url":"/business/market-research"}]}},{"text":"إدارة موارد بشرية","url":"/business/human-resources","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إدارة التوظيف","url":"/business/recruiting"},{"text":"<span>&nbsp;&nbsp;</span>تطوير مؤسسي","url":"/business/organizational-development"},{"text":"<span>&nbsp;&nbsp;</span>تقييم وظيفي","url":"/business/performance-management"},{"text":"<span>&nbsp;&nbsp;</span>رواتب وأجور","url":"/business/salary"},{"text":"<span>&nbsp;&nbsp;</span>أنظمة موارد بشرية","url":"/business/human-resources-systems"},{"text":"<span>&nbsp;&nbsp;</span>استشارات موارد بشرية","url":"/business/human-resources-consulting"}]}},{"text":"أخرى","url":"/business/business-services"}]}},{"text":"صوتيات","url":"/audio","active":false,"menu":{"items":[{"text":"تعليق صوتي","url":"/audio/voice-over","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تعليق صوتي AI","url":"/audio/ai-audio"},{"text":"<span>&nbsp;&nbsp;</span>تعليق صوتي رجالي","url":"/audio/male-voice-over"},{"text":"<span>&nbsp;&nbsp;</span>تعليق صوتي نسائي","url":"/audio/female-voice-over"}]}},{"text":"أداء صوتي","url":"/audio/vocal-performance","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>رد آلي IVR","url":"/audio/ivr"},{"text":"<span>&nbsp;&nbsp;</span>غناء","url":"/audio/singing"},{"text":"<span>&nbsp;&nbsp;</span>دوبلاج","url":"/audio/dubbing"}]}},{"text":"إنتاج صوتي","url":"/audio/audio-production","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>هندسة صوتية","url":"/audio/mixing"},{"text":"<span>&nbsp;&nbsp;</span>إنتاج وتلحين موسيقي","url":"/audio/producers-composers"},{"text":"<span>&nbsp;&nbsp;</span>إنتاج كتب صوتية","url":"/audio/audiobook-production"},{"text":"<span>&nbsp;&nbsp;</span>بودكاست","url":"/audio/podcast-editing"}]}},{"text":"أخرى","url":"/audio/audio-services"}]}},{"text":"تنمية شخصية وهوايات","url":"/lifestyle","active":false,"menu":{"items":[{"text":"صحة وجمال","url":"/lifestyle/health-beauty","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>صحة وتغذية","url":"/lifestyle/nutrition"},{"text":"<span>&nbsp;&nbsp;</span>لياقة بدنية","url":"/lifestyle/fitness-lessons"},{"text":"<span>&nbsp;&nbsp;</span>موضة وجمال","url":"/lifestyle/beauty-fashion"},{"text":"<span>&nbsp;&nbsp;</span>شروحات طبية","url":"/lifestyle/medicine-tutoring"}]}},{"text":"تنمية شخصية","url":"/lifestyle/personal-development","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>استشارات شخصية","url":"/lifestyle/life-coaching"},{"text":"<span>&nbsp;&nbsp;</span>توجيه وإرشاد مهني","url":"/lifestyle/career-counseling"}]}},{"text":"دروس تعليمية","url":"/lifestyle/specialized-sciences","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>دروس لغات","url":"/lifestyle/learn-languages"},{"text":"<span>&nbsp;&nbsp;</span>دروس قرآن وتجويد","url":"/lifestyle/quran"},{"text":"<span>&nbsp;&nbsp;</span>دروس رياضيات","url":"/lifestyle/learn-math"},{"text":"<span>&nbsp;&nbsp;</span>دروس علوم","url":"/lifestyle/learn-science"},{"text":"<span>&nbsp;&nbsp;</span>مساعدة دراسية","url":"/lifestyle/school-help"}]}},{"text":"مهارات حياتية وترفيه","url":"/lifestyle/skills-entertainment","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>سياحة وسفر","url":"/lifestyle/travel-advice"},{"text":"<span>&nbsp;&nbsp;</span>فنون وحرف","url":"/lifestyle/craft-lessons"},{"text":"<span>&nbsp;&nbsp;</span>تعليم الطبخ","url":"/lifestyle/cooking-lessons"},{"text":"<span>&nbsp;&nbsp;</span>ألعاب","url":"/lifestyle/game-coaching"}]}},{"text":"أخرى","url":"/lifestyle/lifestyle-services"}]}},{"text":"كتابة وترجمة","url":"/writing","active":false,"menu":{"items":[{"text":"محتوى مواقع","url":"/writing/website-content","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>مقالات وتدوينات","url":"/writing/articles-blogposts"},{"text":"<span>&nbsp;&nbsp;</span>صفحات الموقع الأساسية","url":"/writing/website-main-pages-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى صفحات هبوط","url":"/writing/landing-page-content"},{"text":"<span>&nbsp;&nbsp;</span>كتابة بروفايل شركات","url":"/writing/company-profile"}]}},{"text":"محتوى دراسي ومهني","url":"/writing/career-study-writing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إعداد وكتابة بحوث","url":"/writing/research-writing"},{"text":"<span>&nbsp;&nbsp;</span>كتابة سيرة ذاتية","url":"/writing/resume-writing"},{"text":"<span>&nbsp;&nbsp;</span>بناء بروفايل لينكدإن","url":"/writing/linkedin-profile-services"},{"text":"<span>&nbsp;&nbsp;</span>كتابة طلبات منح","url":"/writing/grant-writing"}]}},{"text":"محتوى تسويقي","url":"/writing/marketing-copy","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>نصوص إعلانية","url":"/writing/sales-copy"},{"text":"<span>&nbsp;&nbsp;</span>وصف منتجات","url":"/writing/product-description"},{"text":"<span>&nbsp;&nbsp;</span>رسائل بريد إلكتروني","url":"/writing/email-copy"}]}},{"text":"كتابة سيناريو","url":"/writing/script-writing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>سيناريو يوتيوب","url":"/writing/youtube-video-script"},{"text":"<span>&nbsp;&nbsp;</span>سيناريو فيديوهات قصيرة","url":"/writing/short-video-script"},{"text":"<span>&nbsp;&nbsp;</span>سيناريو فيديو سوشيال","url":"/writing/social-video-script"},{"text":"<span>&nbsp;&nbsp;</span>سيناريو أفلام ومسلسلات","url":"/writing/script-writing-services"},{"text":"<span>&nbsp;&nbsp;</span>محتوى بودكاست","url":"/writing/podcast-script"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/writing/video-script"}]}},{"text":"كتابة إبداعية","url":"/writing/creative-writing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>كتابة قصة قصيرة","url":"/writing/short-stories"},{"text":"<span>&nbsp;&nbsp;</span>كتابة شعر","url":"/writing/poetry-writing"},{"text":"<span>&nbsp;&nbsp;</span>تأليف كتاب","url":"/writing/book-writing"},{"text":"<span>&nbsp;&nbsp;</span>كتابة كلمات الأغاني","url":"/writing/lyrics-writing"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/writing/creative-writing-services"}]}},{"text":"ترجمة","url":"/writing/translation","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>إنجليزية للعربية والعكس","url":"/writing/english-arabic-translation"},{"text":"<span>&nbsp;&nbsp;</span>فرنسية للعربية والعكس","url":"/writing/french-arabic-translation"},{"text":"<span>&nbsp;&nbsp;</span>ترجمة لغات أخرى","url":"/writing/other-language-translation"}]}},{"text":"تحسين المحتوى","url":"/writing/content-improvement","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تدقيق محتوى AI","url":"/writing/ai-content"},{"text":"<span>&nbsp;&nbsp;</span>تدقيق لغوي","url":"/writing/proofreading"},{"text":"<span>&nbsp;&nbsp;</span>خدمات تلخيص","url":"/writing/summarizing"},{"text":"<span>&nbsp;&nbsp;</span>تنسيق المحتوى","url":"/writing/data-formating"},{"text":"<span>&nbsp;&nbsp;</span>صياغة وفحص اقتباس","url":"/writing/check-plagiarism-and-paraphrasing"}]}},{"text":"محتوى متخصص","url":"/writing/specialized-writing","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>محتوى طبي وصحي","url":"/writing/medical-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى علمي","url":"/writing/scientific-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى قانوني","url":"/writing/law-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى تقني","url":"/writing/tech-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى رياضي","url":"/writing/sports-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى ديني وتاريخي","url":"/writing/history-religion-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى مالي واقتصادي","url":"/writing/economic-content"},{"text":"<span>&nbsp;&nbsp;</span>محتوى إخباري وسياسي","url":"/writing/news-politics-content"},{"text":"<span>&nbsp;&nbsp;</span>أخرى","url":"/writing/specialized-writing-services"}]}},{"text":"تفريغ نصوص","url":"/writing/transcriptions","active":false,"menu":{"items":[{"text":"<span>&nbsp;&nbsp;</span>تفريغ PDF وصور","url":"/writing/pdf-image-transcription"},{"text":"<span>&nbsp;&nbsp;</span>تفريغ صوت وفيديو","url":"/writing/audio-video-transcription"}]}},{"text":"أخرى","url":"/writing/writing-services"}]}}]
+    }
+  }
+
+  const setActiveTab = (id) => {
+    sessionStorage.setItem('activeTab', id);
+    sessionStorage.setItem('hsoubTabBarActiveTab', id);
+  }
+
+  const getActiveTab = () => {
+    return sessionStorage.getItem('activeTab');
+  }
+
+  const setLastViewedPage = (id, lastViewedPage) => {
+    const tabBarLinks = sessionStorage.getItem('tabBarLinks')
+    const parsedTabBarLinks = tabBarLinks ? JSON.parse(tabBarLinks) : null;
+
+    let data;
+
+    if (!parsedTabBarLinks) {
+      if (id) {
+        data = {
+          [id]: lastViewedPage
+        };
+      } else {
+        data = {};
+      }
+    } else {
+      data = {
+        ...parsedTabBarLinks,
+        [id]: lastViewedPage
+      }
+    }
+
+    sessionStorage.setItem('tabBarLinks', JSON.stringify(data));
+  }
+
+  const getLastViewedPage = (id) => {
+    const tabBarLinks = sessionStorage.getItem('tabBarLinks')
+    if (!tabBarLinks) {
+      return null;
+    }
+
+    const parsedTabBarLinks = JSON.parse(tabBarLinks);
+
+    return parsedTabBarLinks[id];
+  }
+
+  const updateLastViewedPage = (event) => {
+    const LAST_VIEWED_PAGE = window.location.pathname;
+    const activeTab = getActiveTab();
+
+    const isNavigationBack = Boolean(history.state);
+
+    // console.log(`History.state before pushState`, { state: history.state, activeTab });
+
+    if (LAST_VIEWED_PAGE === "/" && !activeTab) {
+      setActiveTab("home")
+      setLastViewedPage("home", LAST_VIEWED_PAGE);
+      return;
+    }
+
+    if (activeTab) {
+      setLastViewedPage(activeTab, LAST_VIEWED_PAGE);
+    }
+  };
+
+  const handleNavigationWithUrl = (id, url) => {
+    return (event, tab) => {
+      event.preventDefault();
+
+      const pathname = window.location.pathname;
+      const activeTab = getActiveTab();
+      const page = getLastViewedPage(id);
+      const isActive = activeTab === id;
+
+      setActiveTab(id);
+
+      if (pathname === url && isActive) {
+        return;
+      }
+
+      if (pathname === url && !isActive) {
+        if (!page) {
+          tab.activate();
+        } else {
+          window.location.href = page;
+        }
+        return;
+      }
+
+      if (!page) {
+        window.location.href = url;
+        return;
+      }
+
+      if (pathname === page && !isActive) {
+        tab.activate();
+        tab.deactivateTabColor();
+        return;
+      }
+
+      if (pathname === page && isActive) {
+        window.location.href = url;
+        return;
+      }
+
+      window.location.href = page;
+    }
+  }
+
+  const handleNavigationWithTabPanel = (id) => {
+    return (event, tab) => {
+      event.preventDefault();
+
+      const currentTab = tabBar.getCurrentTab();
+      const pathname = window.location.pathname;
+      const activeTab = getActiveTab();
+      const page = getLastViewedPage(id);
+      const isActive = activeTab === id;
+
+      /*
+      This variable controls the behavior of the tab bar when the clicked tab
+      is not active and the last page is equal to the current page.
+      If the variable is true, clicking on the current tab will keep you on the same page without opening the clicked tab panel.
+      If the variable is false, clicking on the current tab will activate the clicked tab and open the current tab.
+
+      EX: We are in tab B (which is in page X) and now clicking tab A that is a panel navigated previously to page x.
+      If keepStackForExactPage is true, then clickin tab A will make it active and still in page X, while if keepStackForExactPage is false
+      then clicking tab A will open the panel of tab A.
+      */
+      const keepStackForExactPage = true;
+
+      setActiveTab(id);
+
+      if (!page) {
+        tab.activate();
+        return;
+      }
+
+      if (pathname !== page) {
+        window.location.href = page;
+        return;
+      }
+
+      if (isActive) {
+        tab.activate();
+        setLastViewedPage(id, null);
+        return;
+      }
+
+      // Is not active && pathname === page
+      if (keepStackForExactPage || currentTab.hasPanel()) {
+        tab.activate();
+        tab.closeTabPanel();
+        tab.deactivateTabColor();
+        return;
+      }
+
+      tab.activate();
+    }
+  }
+
+  // window.addEventListener('popstate', updateLastViewedPage);
+
+  updateLastViewedPage();
+
+  const tabBarLinks = sessionStorage.getItem('tabBarLinks');
+  if (!tabBarLinks) {
+    sessionStorage.setItem('tabBarLinks', JSON.stringify({}));
+  }
+
+  var tab_items = [
+    { id: 'MainPageTab',
+      icon: 'home',
+      text: 'الرئيسية',
+      title: 'الرئيسية',
+      active: (!getActiveTab() || getActiveTab() === "MainPageTab") && window.location.pathname === '/',
+      onClick: handleNavigationWithUrl("MainPageTab", "/")
+    },
+    { id: 'userTab',
+      icon: 'user',
+      text: 'حسابي',
+      title: 'حسابي',
+      onClick: handleNavigationWithTabPanel('userTab'),
+      addon: { type: 'tab-panel', config: AccountsTab },
+      badge: '' 
+    },
+    { id: 'searchTab',
+      icon: 'search',
+      text: 'بحث',
+      title: 'بحث',
+      onClick: handleNavigationWithTabPanel('searchTab'),
+      addon: { type: 'tab-panel', config: searchTab }
+    },
+    { id: 'shoppingCartTab',
+      icon: 'shopping-cart',
+      text: 'السلة',
+      active: isCartPage,
+      onClick: handleNavigationWithUrl("shoppingCartTab", "/cart"),
+      badge: '',
+      url: "https://khamsat.com/cart"
+    },
+    { id: 'barsTab',
+      icon: 'bars',
+      text: 'القائمة',
+      title: 'القائمة',
+      onClick: handleNavigationWithTabPanel('barsTab'),
+      addon: { type: 'tab-panel', config: MenuTab } }
+  ]
+
+  var tabBarConfig = {
+    visible: { desktop: false, tablet: true, mobile: true },
+    activateUrlChangeListeners: false,
+    useHistoryStack: true,
+    tabs: {
+      id: 'tabs',
+      items: tab_items
+    },
+  };
+
+  const tabBar = new Hsoub.TabBar(tabBarConfig);
+  tabBar.inject();
+
+  document.documentElement.addEventListener('hsoub._show_tab', function (e) {
+    const activeTab = e.detail.config.id;
+    setActiveTab(activeTab);
+  });
+
+  header = new Hsoub.Header(HeaderConfig)
+  header.inject(function(){
+    document.addEventListener('DOMContentLoaded', function() {
+      notificationsUtil.init(header);
+      if (header.find('messageItem') != undefined) {
+        $(header.find('messageItem').element).addClass('show-xs-only');
+      }
+      if (header.find('privateMsgsTrigger') != undefined) {
+        $(header.find('privateMsgsTrigger').element).addClass('hide-xs-only');
+      }
+    });
+  })
+</script>
+
+      <div class="hsoub-container">
+        <div class="hsoub-content">
+
+
+            	
+
+
+  <div class="container main-container u-hidden@medium">
+    <div class="page_header">
+      <div class="row">
+        <nav dir="rtl"  aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item">
+      <a href="/">
+        الرئيسية
+      </a>
+    </li>
+      <li class="breadcrumb-item active">
+        <a href=&#x2F;community>
+          مجتمع خمسات
+        </a>
+      </li>
+  </ol>
+</nav>
+
+
+
+      </div>
+      <div id="header-group" class="row">
+        <div class="heading col-lg-9 col-8 full-width">
+        <div class="row">
+            <h1 > طلبات الخدمات غير الموجودة </h1>
+        </div>
+      </div>
+        <div class="col-lg-3 col-4  full-width">
+          <div class="page-header-buttons  " dir="ltr">
+              <a  href='&#x2F;community&#x2F;requests&#x2F;new' class='c-button c-button--primary '>
+    
+    <span>موضوع جديد</span>
+    <i class="fa fa-fw fa-plus"></i>
+  </a>
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="container main-container u-hidden@large">
+  <div class="page_header_sm">
+    <div class="row justify-content-between">
+      <div class="col-6">
+        <nav dir="rtl" aria-label="breadcrumb">
+          <ol class="breadcrumb">
+              <li class="breadcrumb-item active">
+                <a class="go-back" href=&#x2F;community>
+                  <i class="fa fa-angle-right go-back-icon"></i>
+                  <span class="go-back-label">مجتمع خمسات</span>
+                </a>
+              </li>
+          </ol>
+        </nav>
+      </div>
+      <div class="col-6 text-end">
+          <div class="">
+            <div class="page-header-buttons  " dir="ltr">
+                <a  href='&#x2F;community&#x2F;requests&#x2F;new' class='main-button-sm  '>
+                  
+                  <span>موضوع جديد</span>
+                  <i class="fa fa-fw fa-plus"></i>
+                </a>
+            </div>
+          </div>
+      </div>
+    </div>
+    <div id="header-group" class="row">
+      <div class="heading col-12 full-width">
+      <div class="row">
+          <h1 > طلبات الخدمات غير الموجودة </h1>
+      </div>
+    </div>
+    
+    </div>
+  </div>
+</div>
+
+
+
+
+          <div class="container main-container">
+
+            <div  class="content inside layout">
+              <div class="row">
+                <div class="col-lg-12 col-sm-12 col-md-12">
+                </div>
+              </div>
+
+
+              <div class="row">
+                <div class="col-md-12 col-sm-12 unavailable_alert">
+                </div>
+              
+
+                  <div class="col-sm-12">
+                  
+<div class="card u-margin-bottom--large" id="forum_home">
+	<div class="card-body p-0" id="forum-requests">
+		<table id="forums_table" class="listing_table">
+			<colgroup>
+				<col class="u-avatar-col">
+				<col width="auto">
+				<col class="u-lastreply-col u-hidden@medium u-hidden@small u-hidden@tiny">
+			</colgroup>
+			<tbody>
+				  <tr id="forum_post_id-799930" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799930" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/veloce_media">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/a16325db32c56ba86fdcdcffcddb714b?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799930-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%85%D8%B7%D9%88%D8%B1-%D9%84%D8%A5%D9%86%D8%B4%D8%A7%D8%A1-%D8%B5%D9%81%D8%AD%D8%A9-%D9%87%D8%A8%D9%88%D8%B7-%D9%85%D8%AA%D8%AC%D8%B1-%D9%85%D8%B5%D8%BA%D8%B1-%D9%84%D9%84%D8%A3%D8%AD%D8%B0%D9%8A%D8%A9-%D9%85%D8%AE">مطلوب مطور لإنشاء صفحة هبوط (متجر مصغر للأحذية) مخ</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/veloce_media"><i class="fa fa-fw fa-user"></i> محمد ر.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 23:31:01 GMT">منذ ساعة و14 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="01&#x2F;11&#x2F;2026 00:40:12 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 5 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/youssefmicheal153">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/097d9863cfe770d520f488e530ef1231?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/youssefmicheal153">.Youssef M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="01&#x2F;11&#x2F;2026 00:40:12 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 5 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799931" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799931" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/jalalabdo2024">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/27a5172c1ce5544035eb6889aacbd43a?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799931-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%85%D8%AA%D8%AE%D8%B5%D8%B5-%D9%85%D8%A4%D8%AB%D8%B1%D8%A7%D8%AA-%D9%88%D9%85%D9%88%D8%B3%D9%8A%D9%82%D9%89-%D9%84%D9%84%D9%81%D9%8A%D8%AF%D9%8A%D9%88%D9%87%D8%A7%D8%AA">مطلوب متخصص مؤثرات وموسيقى للفيديوهات</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/jalalabdo2024"><i class="fa fa-fw fa-user"></i> .Jalal A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 23:37:28 GMT">منذ ساعة و8 دقائق
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="01&#x2F;11&#x2F;2026 00:40:08 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 5 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/mish_misha">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/c645add94fbbf6f06dd0d1a8689f80fe?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/mish_misha">شيماء م.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="01&#x2F;11&#x2F;2026 00:40:08 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 5 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799865" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799865" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/ghazwi2002">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/8f9e387967bc44c27fbff9c92b863456?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799865-%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D9%88%D8%A7%D8%AC%D8%A8-%D8%AC%D8%A7%D9%86%D8%B9%D9%8A">تنسيق واجب جانعي</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/ghazwi2002"><i class="fa fa-fw fa-user"></i> مصطفى آ.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 22:17:34 GMT">منذ يوم وساعتين
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="01&#x2F;11&#x2F;2026 00:34:19 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 11 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/momen_ahmed6">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/94c89e29a5c6910bfffb3be81b5e2453?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/momen_ahmed6">.Momen A</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="01&#x2F;11&#x2F;2026 00:34:19 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 11 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799849" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799849" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/abdo_abrazeq306">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/758a5b7507ea5fc9c34b35ae484e49fd?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799849-%D8%AA%D8%AD%D9%88%D9%8A%D9%84-%D9%85%D9%84%D9%81-pdf-%D8%A5%D9%84%D9%89-excel-%D8%A8%D8%AF%D9%82%D8%A9-%D8%B9%D8%A7%D9%84%D9%8A%D8%A9-%D9%88%D8%AA%D9%86%D8%B3%D9%8A%D9%82-%D9%85%D9%86%D8%B8%D9%85">تحويل ملف PDF إلى Excel بدقة عالية وتنسيق منظم</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/abdo_abrazeq306"><i class="fa fa-fw fa-user"></i> .Most A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 18:04:14 GMT">منذ يوم و6 ساعات
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="01&#x2F;11&#x2F;2026 00:02:59 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 42 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/ali_yaqoub">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/40ed9caf4068b5487e94eba2c4c69fe6?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/ali_yaqoub">.Ali Y</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="01&#x2F;11&#x2F;2026 00:02:59 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 42 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799921" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799921" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/ihabl">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/decbb4ba351067432ca4914f48ddc2d0?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799921-%D9%85%D8%B5%D9%85%D9%85-%D9%83%D8%A7%D9%86%D9%81%D8%A7">مصمم كانفا</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/ihabl"><i class="fa fa-fw fa-user"></i> .Ihab L</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 19:34:07 GMT">منذ 5 ساعات و11 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="01&#x2F;11&#x2F;2026 00:00:10 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 45 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/sahar_sharaf">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/7889701fbddf157e81b9602af8641501?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/sahar_sharaf">.Sahar M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="01&#x2F;11&#x2F;2026 00:00:10 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 45 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799870" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799870" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/hani1430">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/2ecf29d0674f8d09b5ba164ba9d738f2?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799870-%D8%AA%D8%B5%D8%A7%D9%85%D9%8A%D9%85-%D8%A8%D8%B1%D9%88%D9%81%D8%A7%D9%8A%D9%84-%D8%A7%D8%AD%D8%AA%D8%B1%D8%A7%D9%81%D9%8A">تصاميم بروفايل احترافي</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/hani1430"><i class="fa fa-fw fa-user"></i> .Energy M</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 01:55:52 GMT">منذ 22 ساعة و49 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:50:52 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 54 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/apanoub">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/e5bcfd1e1dbc1eef944ec1843495ddbb?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/apanoub">.Bebo B</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:50:52 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ 54 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799831" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799831" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/alihammaad_h">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4d07922c0356ee928010452eec8b4958?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799831-%D9%85%D8%AE%D8%AA%D8%B5-%D9%81%D9%8A-%D8%A7%D9%84%D9%85%D9%86%D8%AD-%D8%A7%D9%84%D8%AF%D8%B1%D8%A7%D8%B3%D9%8A%D8%A9-%D9%88%D8%A7%D9%84%D8%AA%D9%82%D8%AF%D9%8A%D9%85-%D8%B9%D9%84%D9%8A%D9%87%D8%A7">مختص في المنح الدراسية والتقديم عليها</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/alihammaad_h"><i class="fa fa-fw fa-user"></i> .Ali H</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 12:41:13 GMT">منذ يوم و12 ساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:41:50 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و3 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/ahmed365">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/2e1ddbabbe9ce7e35942df47b5138652?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/ahmed365">احمد ع.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:41:50 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و3 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799242" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799242" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/samah_gamal">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/1ecf72ab39b9227da8fc4fcaed8d4733?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799242-%D8%B9%D8%A7%D8%AC%D9%84-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%81%D8%AA%D8%A7%D9%87-%D9%85%D8%AA%D9%81%D8%B1%D8%BA%D9%87-%D9%84%D8%AA%D9%84%D9%82%D9%8A-%D8%A7%D9%84%D8%B7%D9%84%D8%A8%D8%A7%D8%AA-%D8%A8-%D8%B4%D9%87%D8%B1%D9%8A%D8%A7">عاجل مطلوب فتاه متفرغه لتلقي الطلبات ب٢٠$ شهريا</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/samah_gamal"><i class="fa fa-fw fa-user"></i> .Samah G</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="19&#x2F;10&#x2F;2026 17:28:56 GMT">منذ 12 يوم و7 ساعات
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:40:10 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و5 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/mayada_mohamed3">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/6681efa73be5e1df2950d96af23c9a50?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/mayada_mohamed3">.Mayada M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:40:10 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و5 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799869" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799869" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/bnamras">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/1136894aa17d57d819f38d62756ee76f?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799869-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D9%85%D9%88%D9%82%D8%B9-%D9%85%D9%83%D9%88%D9%86-%D9%85%D9%86-%D8%B5%D9%81%D8%AD%D8%AA%D9%8A%D9%86">تصميم موقع مكون من صفحتين</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/bnamras"><i class="fa fa-fw fa-user"></i> Broadcast ع.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 01:54:46 GMT">منذ 22 ساعة و51 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:36:45 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/khaled_z_66">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/1e8a3c5b28a510213f1675548040e6eb?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/khaled_z_66">خالد ز.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:36:45 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799827" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799827" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/tesla_mix">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/bc0519098505df00cfcf000978b98bf9?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799827-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%B5%D8%A7%D9%86%D8%B9-%D9%85%D8%AD%D8%AA%D9%88%D9%89-%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%8A-%D8%A8%D8%A7%D9%84%D9%84%D9%87%D8%AC%D8%A9-%D8%A7%D9%84%D8%B3%D8%B9%D9%88%D8%AF%D9%8A%D8%A9">مطلوب صانع محتوى إعلاني باللهجة السعودية</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/tesla_mix"><i class="fa fa-fw fa-user"></i> احمد س.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 11:31:53 GMT">منذ يوم و13 ساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:36:13 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/ahmed365">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/2e1ddbabbe9ce7e35942df47b5138652?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/ahmed365">احمد ع.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:36:13 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799812" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799812" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/mohanad3751">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/a3305434a5f47613cb3cd8caa81d8792?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799812-%D9%84%D9%88%D8%AC%D9%88-%D8%B4%D8%AE%D8%B5%D9%8A-%D9%84%D9%85%D8%AD%D9%84%D9%84-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA">لوجو شخصي لمحلل بيانات</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/mohanad3751"><i class="fa fa-fw fa-user"></i> مهند خ.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 02:39:30 GMT">منذ يوم و22 ساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:35:51 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/mayada_mohamed3">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/6681efa73be5e1df2950d96af23c9a50?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/mayada_mohamed3">.Mayada M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:35:51 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و9 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799355" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799355" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/m_abdullah11">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/5e0e6bef3edef5bd8c8eee66f8f47257?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799355-%D8%AA%D8%B5%D9%85%D9%8A%D9%85-%D8%B3%D9%8A%D8%B1%D8%A9-%D8%B0%D8%A7%D8%AA%D9%8A%D8%A9">تصميم سيرة ذاتية</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/m_abdullah11"><i class="fa fa-fw fa-user"></i> مشعل ع.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="21&#x2F;10&#x2F;2026 21:24:08 GMT">منذ 10 أيام و3 ساعات
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:35:09 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و10 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/mayada_mohamed3">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/6681efa73be5e1df2950d96af23c9a50?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/mayada_mohamed3">.Mayada M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:35:09 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و10 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799802" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799802" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/%D9%85%D9%86%D8%AA%D8%AC%D8%B9-%D8%AF%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4dac0e4ae338596c9d746093d177de7e?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799802-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%B1%D8%A8%D8%B7-%D9%85%D9%88%D9%82%D8%B9%D9%8A-%D8%A8%D9%85%D9%86%D8%B5%D8%A9-%D8%AA%D8%AF%D8%A7%D9%88%D9%84api">مطلوب ربط موقعي بمنصة تداولapi</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/%D9%85%D9%86%D8%AA%D8%AC%D8%B9-%D8%AF%D8%B1%D8%A9-%D8%A7%D9%84%D8%B9%D8%B1%D9%88%D8%B3"><i class="fa fa-fw fa-user"></i> .Hamdan A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="29&#x2F;10&#x2F;2026 22:35:43 GMT">منذ يومين وساعتين
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:31:24 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و14 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/ahmed365">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/2e1ddbabbe9ce7e35942df47b5138652?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/ahmed365">احمد ع.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:31:24 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و14 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799928" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799928" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/sara_20266">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/fa6f9bb39e37bbf5b93b738ab76e24b1?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799928-%D8%AA%D8%B7%D9%88%D9%8A%D8%B1-%D9%85%D8%AA%D8%AC%D8%B1-%D8%A7%D9%84%D9%83%D8%AA%D8%B1%D9%88%D9%86%D9%8A-%D9%85%D9%82%D8%A7%D8%A8%D9%84-80-%D8%AF%D9%88%D9%84%D8%A7%D8%B1">تطوير متجر الكتروني مقابل 80 دولار</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/sara_20266"><i class="fa fa-fw fa-user"></i> احمد م.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 21:29:19 GMT">منذ 3 ساعات و16 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:29:16 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و16 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/marwanmezr">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/35141b03e68bba43b4f5bda569c8efab?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/marwanmezr">.Hassen M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:29:16 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و16 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799873" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799873" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/jwan111">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4571c02cd8f2d5ae531c3e9733e4d9b2?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799873-%D8%A7%D8%A8%D8%AD%D8%AB-%D8%B9%D9%86-%D8%B4%D8%AE%D8%B5-%D9%85%D8%AE%D8%AA%D8%B5-uiux">ابحث عن شخص مختص uiux</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/jwan111"><i class="fa fa-fw fa-user"></i> .Alaa S</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 05:21:44 GMT">منذ 19 ساعة و24 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:28:36 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و17 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/mohamedmohsen_uiux">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/385295787a58a0b0ccaac5821a896aac?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/mohamedmohsen_uiux">.Mohamed M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:28:36 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و17 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799908" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799908" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/sama_hany47">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/9e3347942e46df8cc90ee158facba5f2?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799908-%D9%85%D8%AD%D8%AA%D8%A7%D8%AC%D9%87-%D8%AD%D8%AF-%D9%8A%D8%B3%D8%A7%D8%B9%D8%AF%D9%86%D9%8A-%D9%81%D9%8A-%D8%AA%D8%AD%D9%84%D9%8A%D9%84-%D8%A8%D9%8A%D8%A7%D9%86%D8%A7%D8%AA-%D9%85%D8%A8%D9%8A%D8%B9%D8%A7%D8%AA">محتاجه حد يساعدني في تحليل بيانات مبيعات</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/sama_hany47"><i class="fa fa-fw fa-user"></i> .Sama H</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 15:41:33 GMT">منذ 9 ساعات و4 دقائق
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:26:48 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و19 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/omkh2025">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4afb3850c825908c034732a0aed75e97?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/omkh2025">.Alaa K</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:26:48 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و19 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799871" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799871" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/aliforat">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/5f43f04fb5a09e8b67e9fd3b3f9af09f?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799871-%D8%AA%D8%B3%D9%88%D9%8A%D9%82-%D8%A5%D9%84%D9%89-%D9%85%D9%88%D9%82%D8%B9%D9%8A">تسويق إلى موقعي</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/aliforat"><i class="fa fa-fw fa-user"></i> .Ali A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 02:48:32 GMT">منذ 21 ساعة و57 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:25:07 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و20 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/anasosama94">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/92e9d09887be5cbdf59db1e788c3aa1a?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/anasosama94">أنس أ.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:25:07 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و20 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799867" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799867" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/shsm">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/8ef2e95a6b7ef67e7a51fec047955d20?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799867-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%85%D9%88%D9%82%D8%B9-%D8%A3%D9%88-%D8%AA%D8%B7%D8%A8%D9%8A%D9%82">مطلوب موقع أو تطبيق</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/shsm"><i class="fa fa-fw fa-user"></i> .Startthe Killer G</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 22:46:04 GMT">منذ يوم وساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 23:03:02 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و42 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/hani89876njbvbhg">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/37d02bcb8fff718b7064b99d767ea7a3?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/hani89876njbvbhg">.Hani B</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 23:03:02 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و42 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799768" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799768" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/abd_awwad2023">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4e43e55d9d1703c71541d9c724220a3c?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799768-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%85%D8%B7%D9%88%D8%B1-%D9%84%D8%B9%D9%85%D9%84-dockerfile-%D9%87%D9%8A%D9%83%D9%84-github-%D9%88%D8%AA%D9%88%D8%AB%D9%8A%D9%82-%D9%85%D8%B4">مطلوب مطور لعمل Dockerfile، هيكل GitHub، وتوثيق مش</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/abd_awwad2023"><i class="fa fa-fw fa-user"></i> .Yuosef A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="29&#x2F;10&#x2F;2026 09:05:43 GMT">منذ يومين و15 ساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:55:26 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و50 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/elwan7497">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/4a0833a5e93e01ae2598ea2a8c8a833b?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/elwan7497">محمد ع.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:55:26 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و50 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799816" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799816" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/hassanaboali44">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/07de81d4345fe30e5aa72a25069bf315?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799816-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%85%D8%B3%D8%A7%D8%B9%D8%AF-%D8%AA%D9%86%D9%81%D9%8A%D8%B0%D9%8A-%D8%B3%D9%83%D8%B1%D8%AA%D8%A7%D8%B1%D9%8A%D8%A9-%D9%84%D8%AA%D9%86%D8%B8%D9%8A%D9%85-%D8%A7%D9%84%D8%A3%D9%81%D9%83%D8%A7%D8%B1-%D9%88%D9%85%D8%AA%D8%A7%D8%A8%D8%B9">مطلوب مساعد تنفيذي&#x2F; سكرتارية لتنظيم الأفكار ومتابع</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/hassanaboali44"><i class="fa fa-fw fa-user"></i> .Hassan M</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="30&#x2F;10&#x2F;2026 06:08:44 GMT">منذ يوم و18 ساعة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:54:04 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و51 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/apanoub">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/e5bcfd1e1dbc1eef944ec1843495ddbb?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/apanoub">.Bebo B</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:54:04 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و51 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799578" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799578" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/mr11_om">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/b14495927b607cbcf0da9be477f4122e?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799578-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D9%81%D8%B1%D9%8A-%D9%84%D8%A7%D9%86%D8%B3%D8%B1%D8%B2-%D9%84%D9%84%D8%B9%D9%85%D9%84-%D8%AD%D8%B3%D8%A8-%D8%A7%D9%84%D8%B7%D9%84%D8%A8-%D8%A7%D9%84%D9%83%D8%A7%D8%A8%D8%B4%D9%86-%D9%85%D9%87%D9%85">مطلوب فري لانسرز للعمل حسب الطلب، الكابشن مهم.</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/mr11_om"><i class="fa fa-fw fa-user"></i> محمود ا.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="25&#x2F;10&#x2F;2026 19:25:44 GMT">منذ 6 أيام و5 ساعات
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:51:11 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و54 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/yaraa23">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/d138cc35eadf7f413fc1fd09ab3e81f5?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/yaraa23">.Yara A</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:51:11 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و54 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799915" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799915" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/i3shmawyz">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/0561ad6eb5415db10cd41b1aa849b7dd?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799915-%D8%B9%D8%A7%D9%8A%D8%B2-4-%D8%AC%D9%8A%D8%B3%D8%AA-%D8%A8%D9%88%D8%B3%D8%AA-%D9%85%D9%88%D8%A7%D9%82%D8%B9-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1%D9%8A%D8%A9-%D9%85%D8%B5%D8%B1%D9%8A%D9%87">عايز 4 جيست بوست مواقع اخبارية مصريه</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/i3shmawyz"><i class="fa fa-fw fa-user"></i> .Mustafa A</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 18:50:22 GMT">منذ 5 ساعات و55 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:51:01 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و54 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/apanoub">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/e5bcfd1e1dbc1eef944ec1843495ddbb?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/apanoub">.Bebo B</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:51:01 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و54 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799580" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799580" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/mshaweer-oman">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/682243cddaadadf77a9109698fb9d047?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799580-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%AE%D8%A8%D9%8A%D8%B1-%D9%85%D8%AD%D8%AA%D8%B1%D9%81-%D9%84%D8%B5%D9%86%D8%A7%D8%B9%D8%A9-%D9%81%D9%8A%D8%AF%D9%8A%D9%88-ai">مطلوب خبير محترف لصناعة فيديو ai</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/mshaweer-oman"><i class="fa fa-fw fa-user"></i> موسى ا.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="25&#x2F;10&#x2F;2026 20:21:46 GMT">منذ 6 أيام و4 ساعات
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:49:34 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و56 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/codex_123">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/44fdd54b8438666d0f8b9057fe43613c?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/codex_123">.Helmy M</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:49:34 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و56 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799897" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799897" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/himaragab7">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/7bf8ec6148d13c26e184b9dd917a481e?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799897-%D9%85%D8%B7%D9%84%D9%88%D8%A8-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D9%84%D9%82%D8%B5-%D9%88%D8%B9%D8%B1%D8%B6-%D8%A3%D8%B3%D8%A6%D9%84%D8%A9-pdf-%D8%B9%D9%84%D9%89-%D8%A7%D9%84%D8%B3%D8%A8%D9%88%D8%B1%D8%A9">مطلوب برنامج لقص وعرض أسئلة PDF على السبورة</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/himaragab7"><i class="fa fa-fw fa-user"></i> ابراهيم ا.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 12:10:49 GMT">منذ 12 ساعة و35 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:46:42 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و59 دقيقة</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/yaraa23">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/d138cc35eadf7f413fc1fd09ab3e81f5?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/yaraa23">.Yara A</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:46:42 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعة و59 دقيقة</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+  <tr id="forum_post_id-799896" class="forum_post_id hidden"></tr>
+    <tr id="forum_post-799896" class="forum_post">
+      <td class="avatar-td text-center">
+        <a href="/user/faris232">
+          <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/2806ec35b8fd6cb09587992ecda88bb1?s=128" />
+        </a>
+      </td>
+
+      <td class="details-td">
+        <h3 class="details-head"><a class="ajaxbtn" href="/community/requests/799896-%D8%A8%D8%B1%D9%86%D8%A7%D9%85%D8%AC-%D8%A8%D8%B5%D9%85%D8%A9-%D8%AD%D8%A7%D8%B5-%D8%A8-%D8%AC%D9%87%D8%A7%D8%B2-zkt">برنامج بصمة حاص ب جهاز zkt</a></h3>
+        <ul class="details-list">
+           <li>
+              <a class="user" href="/user/faris232"><i class="fa fa-fw fa-user"></i> فارس م.</a>
+           </li>
+           <li class="d-lg-inline-block d-none">
+              <i class="fa-regular fa-fw fa-clock"></i>
+              <span dir="ltr" title="31&#x2F;10&#x2F;2026 11:59:42 GMT">منذ 12 ساعة و46 دقيقة
+
+              </span>
+           </li>
+           <li class="d-lg-none d-inline-block">
+            <span title="31&#x2F;10&#x2F;2026 22:40:56 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعتين و4 دقائق</span>
+           </li>
+        </ul>
+      </td>
+
+      <td class="d-lg-block d-none">
+        <div class="o-media">
+          <div class="o-media__right u-no--margin">
+            <div class="u-hidden@small">
+              <a href="/user/%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84-%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D8%A8%D9%8A">
+                <img class="u-circle custom-img-thumbnail img--medium" src="https://avatars.hsoubcdn.com/aafc16c3230c38a8b06cbd54d869d5fd?s=128" />
+              </a>
+            </div>
+          </div>
+          <div class="o-media__body pt-2 u-padding-right">
+            <h3 class="details-head">
+              <a class="user" href="/user/%D8%A5%D8%B3%D9%85%D8%A7%D8%B9%D9%8A%D9%84-%D8%A7%D9%84%D8%B4%D8%B1%D8%B9%D8%A8%D9%8A">إسماعيل ح.</a>
+
+            </h3>
+            <ul class="details-list">
+               <li>
+                <span title="31&#x2F;10&#x2F;2026 22:40:56 GMT"><i class="fa-regular fa-fw fa-clock"></i>  آخر تفاعل منذ ساعتين و4 دقائق</span>
+               </li>
+            </ul>
+          </div>
+        </div>
+      </td>
+    </tr>
+
+			</tbody>
+	  </table>
+		
+	</div>
+</div>
+  <div id="community_more_content" class="text-center mt-4">
+    <input id="community_page_url" type="hidden" value="&#x2F;community&#x2F;requests" />
+    <button id="community_loadmore_btn" type="button" class="c-button c-button--primary mb-lg-4 c-button--ghost">
+      <span>عرض المواضيع الأقدم</span>
+    </button>
+  </div>
+
+                </div>
+
+
+              </div><!--  END ROW -->
+            </div>
+            <!--  END content -->
+          </div>
+          <!--  END o-wrapper -->
+          <!-- footer section -->
+          <footer>
+  <div class="container grid-container pt-5 pb-3 second-footer">
+    <div class="row">
+      <div class="col-lg-2 col-md-2 col-12">
+        <h5 class="footer-menu-title">موقع خمسات</h5>
+        <ul class="footer-menu">
+          <li><a class="footer-menu-link" href="/about">حول خمسات</a></li>
+          <li><a class="footer-menu-link" href="/how">كيف يعمل الموقع</a></li>
+          <li><a class="footer-menu-link" href="/faq">الأسئلة الشائعة</a></li>
+          <li><a class="footer-menu-link" href="/guarantee">ضمان الحقوق</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-4 col-md-4 col-12">
+        <h5 class="footer-menu-title">روابط</h5>
+        <ul class="footer-menu">
+          <li><a class="footer-menu-link" href="/freelance">البيع على خمسات</a></li>
+          <li><a class="footer-menu-link" href="https://khbra.com">منصة خبرة</a></li>
+          <li><a class="footer-menu-link" href="https://blog.khamsat.com/">مدونة خمسات</a></li>
+          <li><a class="footer-menu-link" href="/r/helpdesk">مركز المساعدة</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12">
+        <h5 class="footer-menu-title">مجتمع خمسات</h5>
+        <ul class="footer-menu">
+            <li><a class="footer-menu-link" href="/community/showcase">نماذج أعمال قمت بتنفيذها</a></li>
+            <li><a class="footer-menu-link" href="/community/requests">طلبات الخدمات غير الموجودة</a></li>
+            <li><a class="footer-menu-link" href="/community/stories">تجارب وقصص المستخدمين</a></li>
+            <li><a class="footer-menu-link" href="/community/general">أمور عامة حول خمسات</a></li>
+        </ul>
+      </div>
+      <div class="col-lg-3 col-md-3 col-12">
+        <div class="row">
+          <div class="col-md-12 mb-5">
+            <h5 class="footer-menu-title">تابعنا</h5>
+            <div class="social-media">
+              <ul class="list-inline follow-us-buttons">
+                <li class="list-inline-item">
+                    <a href="http://twitter.com/KhamsatDotCom" class="btn btn-flat btn-follow">
+                      <i class="fa-brands fa-x-twitter"></i>
+                    </a>
+                </li>
+                <li class="list-inline-item mr-md-0">
+                    <a href="http://www.facebook.com/KhamsatDotCom" class="btn btn-flat btn-follow">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                </li>
+              </ul>
+            </div>
+          </div>
+          <div class="col-md-12">
+            <h5 class="footer-menu-title">وسائل الدفع المتاحة</h5>
+            <div class="payment-methods">
+              <div class="payment-methods-icon">
+                <i class="fa-brands fa-cc-paypal fa-2x"></i>
+              </div>
+              <div class="payment-methods-icon">
+                <i class="fa-brands fa-cc-mastercard fa-2x"></i>
+              </div>
+              <div class="payment-methods-icon">
+                <i class="fa-brands fa-cc-visa fa-2x"></i>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="middle-footer">
+    <div class="container main-container ps-0 pe-0">
+      <div class="row ms-0 me-0">
+        <div class="col-md-6">
+          <ul class="middle-footer-menu">
+            <li><a class="middle-footer-menu-link" href="/terms">شروط الاستخدام</a></li>
+            <li><a class="middle-footer-menu-link" href="/privacy"> بيان الخصوصية</a></li>
+            <li><a class="middle-footer-menu-link" href="/levels"> المستويات</a></li>
+          </ul>
+        </div>
+        <div class="col-md-6">
+          <p class="copyrights pt-1">
+            © 2026 Hsoub. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</footer>  
+        </div>
+      </div>
+
+
+    <input id="accounts_token" type='hidden' name='accounts_token' value='e0a438b4fc4f700b88539a09f1152ad8' />
+
+
+      <!-- Google tag (gtag.js) -->
+      <script  src="https://www.googletagmanager.com/gtag/js?id=G-VJTWD7MMFR" defer></script>
+      <script >
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-VJTWD7MMFR');
+      </script>
+
+    <div id="loading" class="hidden">
+      <p class="text-center"><img src="https://khamsat.hsoubcdn.com/assets/images/loading-b9f326901e161822ce76a37af0f8d0dfb8d2e913ff9782c13eb5d72bbda199c2.gif" alt="يرجى الإنتظار" />
+      </p>
+    </div>
+  </body>
+</html>

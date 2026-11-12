@@ -1,0 +1,22 @@
+import test from 'node:test';
+import assert from 'node:assert/strict';
+import * as config from '../src/config.js';
+
+test('ported defaults match Python config for key settings', () => {
+  const expected = {
+    REPORT_PORT: 8765, PROTOTYPE_MAX_KB: 200, PROTOTYPE_DIR: 'prototypes', PROTOTYPE_GEMINI_ATTEMPTS: 2,
+    KHAMSAT_TIMEOUT_SECONDS: 30, KHAMSAT_REQUEST_GAP_SECONDS: 2.0,
+    COMPETITION_LOW_MAX_BIDS: 10, COMPETITION_HIGH_MIN_BIDS: 41,
+    SCORING_TITLE_KEYWORD_WEIGHT: 1.0, SCORING_DESCRIPTION_KEYWORD_WEIGHT: 0.5,
+    SCORING_BUDGET_SATURATION_USD: 1000.0, INTERVAL_MINUTES: 60,
+    RADAR_ENABLED: false, RADAR_INTERVAL_SECONDS: 120, RADAR_MAX_BIDS: 3,
+    HIGH_SCORE_THRESHOLD: 6, HOURLY_RATE_USD: 15, ESTIMATE_BUFFER: 1.25,
+  };
+  for (const [key, value] of Object.entries(expected)) assert.deepEqual(config[key], value, key);
+  assert.deepEqual(config.PRICE_GROUPS.A, new Set(['USD', 'EUR', 'GBP', 'AUD', 'CAD', 'NZD', 'SAR', 'AED']));
+  assert.deepEqual(config.PRICE_GROUPS.B, new Set(['EGP', 'INR']));
+});
+
+test('validateConfig reports missing environment secrets', () => {
+  assert.deepEqual(config.validateConfig(), ['TELEGRAM_BOT_TOKEN', 'TELEGRAM_CHAT_ID', 'GEMINI_API_KEY', 'GEMINI_MODEL', 'REPORT_API_KEY']);
+});
