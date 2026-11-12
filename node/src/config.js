@@ -19,7 +19,7 @@ export const GEMINI_MAX_OUTPUT_TOKENS = Number.isInteger(Number(process.env.GEMI
 export const PROFILE_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', process.env.PROFILE_PATH || '../profile.md');
 export const DB_PATH = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..', process.env.NODE_DB_PATH || 'jobs_node.db');
 export const API_HOST = process.env.API_HOST?.trim() || '127.0.0.1';
-export const API_PORT = Number.parseInt(process.env.API_PORT || '8787', 10);
+export const API_PORT = Number.parseInt(process.env.PORT || process.env.API_PORT || '8787', 10);
 export const API_KEY = secret('API_KEY');
 export const CORS_ORIGINS = Object.freeze((process.env.CORS_ORIGINS || '').split(',').map((origin) => origin.trim()).filter(Boolean));
 export const EVENTS_BUFFER_SIZE = positiveSetting(process.env.EVENTS_BUFFER_SIZE, 500);
