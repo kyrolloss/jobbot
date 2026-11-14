@@ -337,7 +337,7 @@ export function createServer({ db, config = defaultConfig, logger = defaultLogge
       }
       return;
     }
-    await router.handle(request, response, { db, config: saasConfig, logger, version, principal: request.principal, guard });
+    await router.handle(request, response, { db, config: saasConfig, logger, version, principal: request.principal, guard, gemini });
   });
   server.requestTimeout = config.API_REQUEST_TIMEOUT_MS || 30_000;
   server.headersTimeout = Math.max(server.requestTimeout + 1000, 35_000);

@@ -4,6 +4,7 @@ import { fileURLToPath } from 'node:url';
 import { connect } from '../db.js';
 import { applyNotificationsMigration, handleNotificationRequest } from '../notifications.js';
 import { buildPrototype } from '../prototype.js';
+import { buildPrototypeContentPrompt, parseLocalized } from '../ai/prototype_content.js';
 import { getPricesReport, getTimingReport, getWeeklyReport } from '../reports.js';
 
 const prototypeMigrationPath = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '../../migrations/20261112_add_prototype_html.sql');
@@ -109,7 +110,7 @@ export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
   ]) {
     router.add(method, route, ({ body, ...context }) => handleNotificationRequest(action, { body, ...context }));
   }
-  router.add('POST', '/jobs/:id/prototype', async ({ params, body, db, principal, guard, response }) => {
+  router.add('POST', '/jobs/:id/prototype', async ({ params, body, db, principal, guard, response, gemini }) => {
     const jobId = positiveJobId(params.id);
     if (jobId === null) { sendJson(response, 400, { error: 'invalid_job_id' }); return; }
     const userId = principal.userId;
@@ -125,7 +126,14 @@ export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
         if (!row.proposal_text || !row.proposal_text.trim()) {
           throw new HttpError(400, 'NO_PROPOSAL', 'لا يوجد عرض مكتوب لهذه الوظيفة');
         }
-        const generated = buildPrototype(job, row.proposal_text, body || {});
+        let localized = null;
+        if (gemini?.generate) {
+          try {
+            const content = await gemini.generate({ prompt: buildPrototypeContentPrompt(job, row.proposal_text), json: true });
+            localized = parseLocalized(content.text);
+          } catch { localized = null; }
+        }
+        const generated = buildPrototype({ ...job, localized }, row.proposal_text, body || {});
         db.prepare('UPDATE user_jobs SET prototype_html=?,updated_at=? WHERE user_id=? AND job_id=?')
           .run(generated, new Date().toISOString(), userId, jobId);
         return { result: generated };
