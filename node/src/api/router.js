@@ -119,7 +119,7 @@ export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
       WHERE j.rowid=? AND uj.user_id=?`).get(jobId, userId);
     if (!row) { sendJson(response, 404, { error: 'not_found' }); return; }
     const estimate = estimateFields(row.estimate);
-    const job = { ...row, estimated_price: estimate.estimated_price, estimated_days: estimate.estimated_days };
+    const job = { ...row, estimated_price: estimate.estimated_price, estimated_days: estimate.estimated_days, estimated_tasks: estimate.tasks };
     try {
       const html = await guard.execute({ principal, feature: 'prototype', jobId }, async () => {
         if (!row.proposal_text || !row.proposal_text.trim()) {
