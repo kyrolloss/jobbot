@@ -11,6 +11,7 @@ import { MostaqlSource } from './sources/mostaql.js';
 import { KhamsatSource } from './sources/khamsat.js';
 import * as defaultConfig from './config.js';
 import { fanOutJob } from './user_jobs.js';
+import { parseStoredProfile, profileSearchTerms } from './profile.js';
 
 let lockHeld = false;
 let activeStartedAt = null;
@@ -151,8 +152,10 @@ export async function processNewJob({ db, source, job: inputJob, statsFetchAllow
     source.lastDetailError = null;
   }
 
+  const ownerProfile = parseStoredProfile(db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=1').get()?.profile_md);
+  const ownerTerms = profileSearchTerms(ownerProfile);
   const tags = extractTags(result.job);
-  if (!matchesJob(result.job)) {
+  if (!matchesJob(result.job, ownerProfile ? ownerTerms : null)) {
     result.filteredOut = true;
     if (dryRun) return result;
     try {
@@ -186,7 +189,7 @@ export async function processNewJob({ db, source, job: inputJob, statsFetchAllow
     }
   }
   try {
-    const scored = scoreJob(result.job, result.stats);
+    const scored = scoreJob(result.job, result.stats, ownerProfile ? ownerTerms.include : undefined);
     result.score = scored.score;
     result.scoreLine = scored.line;
     result.job.score = scored.score;
@@ -299,6 +302,16 @@ export async function runScan({ db, sources = createDefaultSources(), trigger = 
     }
 
     const finishedAt = iso(selectedClock.now());
+    for (const source of sources) {
+      const state = perSource[source.name];
+      const firstError = state.errors[0];
+      try {
+        db.prepare(`INSERT INTO source_scan_state(source,enabled,last_scan_at,last_count,last_error_code,last_error_message)
+          VALUES(?,1,?,?,?,?) ON CONFLICT(source) DO UPDATE SET enabled=1,last_scan_at=excluded.last_scan_at,
+          last_count=excluded.last_count,last_error_code=excluded.last_error_code,last_error_message=excluded.last_error_message`)
+          .run(source.name, finishedAt, state.fetched, firstError ? (firstError.status ? `HTTP_${firstError.status}` : String(firstError.kind || 'SOURCE_ERROR').toUpperCase()) : null, firstError ? String(firstError.message || 'Source request failed').slice(0, 240) : null);
+      } catch { /* Status reporting must never stop a scan. */ }
+    }
     const duration = Math.max(0, selectedClock.monotonic() - startMono);
     const totals = Object.values(perSource).reduce((sum, current) => ({
       fetched: sum.fetched + current.fetched,

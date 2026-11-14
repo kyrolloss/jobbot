@@ -3,7 +3,7 @@ import { Source, SourceError, requestJson } from './base.js';
 
 export const API_URL = 'https://www.freelancer.com/api/projects/0.1/projects/active/';
 export const PROJECT_URL_BASE = 'https://www.freelancer.com/projects/';
-export const USER_AGENT = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/130.0.0.0 Safari/537.36';
+export const USER_AGENT = 'Jobbot/1.0 (automated public job listing monitor; owner-operated)';
 
 function formatAmount(value) {
   const number = Number(value);

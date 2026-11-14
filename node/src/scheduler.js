@@ -27,6 +27,7 @@ export function createScheduler({
   let nextRunAt = null;
   let started = false;
   let timerGeneration = 0;
+  let lastScan = null;
 
   function clearScheduled() {
     timerGeneration++;
@@ -53,13 +54,21 @@ export function createScheduler({
         reschedule();
         return;
       }
-      try { await scan({ db, sources, trigger: 'scheduled', clock, onNewJob, lock: release }); }
+      try {
+        lastScan = await scan({ db, sources, trigger: 'scheduled', clock, onNewJob, lock: release });
+        if (db && lastScan) {
+          db.exec('CREATE TABLE IF NOT EXISTS app_settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)');
+          db.prepare("INSERT INTO app_settings(key,value,updated_at) VALUES('last_scan',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at")
+            .run(JSON.stringify(lastScan), dateFrom(clock).toISOString());
+        }
+      }
       catch { logger.error('Scheduled scan failed'); }
       finally {
         release();
         reschedule();
       }
     }, delay);
+    timer?.unref?.();
   }
 
   function reschedule() {
@@ -69,6 +78,9 @@ export function createScheduler({
   function loadSettings() {
     if (!settingsLoaded) {
       currentSettings = settingsStore?.read?.() || currentSettings;
+      if (db) {
+        try { const row = db.prepare("SELECT value FROM app_settings WHERE key='last_scan'").get(); if (row) lastScan = JSON.parse(row.value); } catch { /* An absent or old status row is harmless. */ }
+      }
       settingsLoaded = true;
     }
   }
@@ -108,7 +120,7 @@ export function createScheduler({
         enabled: currentSettings.scan_enabled,
         interval_minutes: currentSettings.interval_minutes || INTERVAL_MINUTES,
         next_run_at: currentSettings.scan_enabled ? nextRunAt : null,
-        last_scan: getScanState().last_scan,
+        last_scan: getScanState().last_scan || lastScan,
       };
     },
   };

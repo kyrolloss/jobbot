@@ -103,6 +103,7 @@ export function createRouter({ maxBodyBytes = 1024 * 1024 } = {}) {
   for (const [method, route, action] of [
     ['POST', '/notifications/register', 'register'],
     ['POST', '/notifications/unregister', 'unregister'],
+    ['POST', '/notifications/test', 'test'],
     ['PATCH', '/notifications/settings', 'patchSettings'],
     ['GET', '/notifications/settings', 'getSettings'],
   ]) {

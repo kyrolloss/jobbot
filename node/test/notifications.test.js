@@ -139,6 +139,31 @@ test('POST register disables paid sound for a free plan user', async (t) => {
   assert.equal(db.prepare('SELECT sound_enabled FROM device_tokens WHERE token=?').get('free-user-token').sound_enabled, 0);
 });
 
+test('POST /notifications/test sends one normal test push only to that user registered token', async (t) => {
+  const db = database(t), api = await apiFor(t, db), calls = fakeFetch();
+  seedToken(db, 2, 'owner-test-device');
+  const previousFetch = globalThis.fetch, previousEnabled = process.env.NOTIFICATIONS_ENABLED, previousAccount = process.env.FCM_SERVICE_ACCOUNT_JSON;
+  globalThis.fetch = (url, options) => String(url).startsWith('https://oauth2.googleapis.com/') || String(url).startsWith('https://fcm.googleapis.com/')
+    ? calls.fetch(url, options) : previousFetch(url, options);
+  process.env.NOTIFICATIONS_ENABLED = 'true';
+  process.env.FCM_SERVICE_ACCOUNT_JSON = JSON.stringify(account('test-endpoint'));
+  t.after(() => {
+    globalThis.fetch = previousFetch;
+    if (previousEnabled === undefined) delete process.env.NOTIFICATIONS_ENABLED; else process.env.NOTIFICATIONS_ENABLED = previousEnabled;
+    if (previousAccount === undefined) delete process.env.FCM_SERVICE_ACCOUNT_JSON; else process.env.FCM_SERVICE_ACCOUNT_JSON = previousAccount;
+  });
+  let response = await api.request('/notifications/test', 'POST', { token: 'owner-test-device' });
+  assert.equal(response.status, 200);
+  assert.deepEqual(await response.json(), { ok: true, sent: true });
+  assert.equal(calls.messages.length, 1);
+  assert.equal(calls.messages[0].token, 'owner-test-device');
+  assert.deepEqual(calls.messages[0].data, { job_id: 'test', category: 'other', tier: 'normal', test: 'true' });
+  assert.equal(calls.messages[0].android.notification.channel_id, 'normal_jobs');
+  response = await api.request('/notifications/test', 'POST', { token: 'another-user-device' });
+  assert.equal(response.status, 404);
+  assert.equal(calls.messages.length, 1);
+});
+
 test('PATCH settings persists notification categories', async (t) => {
   const db = database(t), api = await apiFor(t, db);
   seedToken(db, 2, 'settings-token');

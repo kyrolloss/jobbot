@@ -5,8 +5,8 @@ import { countRadarAlertsSince, markRadarAlert } from './db.js';
 import { emitSavedJobEvent, processNewJob, safeEventData, savedJobEventData, tryAcquireScanLock } from './scanner.js';
 import { SourceError } from './sources/base.js';
 import { defaultSettings, settingsStore as defaultSettingsStore } from './settings.js';
-import fs from 'node:fs';
 import { buildProposalPrompt } from './ai/proposal.js';
+import { parseStoredProfile, profilePromptText } from './profile.js';
 import { saveProposal, setStatus } from './db.js';
 import { getJobCategory, sendPushNotification } from './notifications.js';
 
@@ -193,8 +193,7 @@ export function createRadar({
     try {
       const row=db.prepare(`SELECT j.rowid AS id,j.source,j.external_id,j.title,j.description,j.budget,uj.status FROM jobs j JOIN user_jobs uj ON uj.job_id=j.rowid WHERE j.rowid=? AND uj.user_id=1`).get(jobId);
       if(!row)return;
-      let profile=db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=1').get()?.profile_md?.trim();
-      if(!profile){try{profile=fs.readFileSync(config.PROFILE_PATH,'utf8').trim();}catch{}}
+      const profile=profilePromptText(parseStoredProfile(db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=1').get()?.profile_md));
       if(!profile)throw new Error('Profile unavailable');
       const output=await guard.execute({principal:{userId:1,role:'owner',planId:'owner'},feature:'proposal',jobId},async()=>{
         const generated=await gemini.generate({prompt:buildProposalPrompt(row,profile)});

@@ -13,8 +13,12 @@ export function containsKeyword(text, keyword) {
   return folded.includes(normalized);
 }
 
-export function matchesJob(job) {
+export function matchesJob(job, profileTerms = null) {
   const text = `${job.title ?? 'None'}\n${job.description ?? 'None'}`.toLowerCase();
+  if (profileTerms) {
+    const included = profileTerms.include?.length ? profileTerms.include.some((term) => containsKeyword(text, term)) : true;
+    return included && !profileTerms.exclude.some((term) => containsKeyword(text, term));
+  }
   return KEYWORDS.some((keyword) => containsKeyword(text, keyword))
     && !NEGATIVE_KEYWORDS.some((keyword) => containsKeyword(text, keyword));
 }

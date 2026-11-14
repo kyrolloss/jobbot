@@ -54,6 +54,13 @@ export function openDb(databasePath = DB_PATH) {
       }
     }
     createSaasSchema(connection);
+    connection.exec(`CREATE TABLE IF NOT EXISTS app_settings (
+      key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP
+    );
+    CREATE TABLE IF NOT EXISTS source_scan_state (
+      source TEXT PRIMARY KEY, enabled INTEGER NOT NULL DEFAULT 1, last_scan_at TEXT,
+      last_count INTEGER, last_error_code TEXT, last_error_message TEXT
+    );`);
     return connection;
   } catch (error) {
     closeDb(connection);

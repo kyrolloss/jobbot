@@ -3,10 +3,11 @@ import assert from 'node:assert/strict';
 import fs from 'node:fs';
 import os from 'node:os';
 import path from 'node:path';
-import { createSettingsStore } from '../src/settings.js';
+import { createDatabaseSettingsStore, createSettingsStore } from '../src/settings.js';
 import { createScheduler } from '../src/scheduler.js';
 import { tryAcquireScanLock } from '../src/scanner.js';
 import { INTERVAL_MINUTES } from '../src/config.js';
+import { openDb, closeDb } from '../src/db.js';
 
 function temporarySettings(t) {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'jobbot-settings-'));
@@ -177,4 +178,22 @@ test('a scan finishing after settings change leaves one timer chain', async (t) 
   assert.equal(fake.timers.size, 1);
   scheduler.stop();
   assert.equal(fake.timers.size, 0);
+});
+
+test('database scheduler settings survive scheduler recreation', (t) => {
+  const db = openDb(':memory:');
+  t.after(() => closeDb(db));
+  const store = createDatabaseSettingsStore({ dbProvider: () => db });
+  store.write({ scan_enabled: true, interval_minutes: 10 });
+  const fake = fakeTimerHarness();
+  const first = createScheduler({ db, settingsStore: store, clock: fake.clock, setTimeoutFn: fake.setTimeoutFn, clearTimeoutFn: fake.clearTimeoutFn, logger: { warn() {}, error() {} } });
+  first.start();
+  assert.equal(first.status().enabled, true);
+  assert.equal(first.status().interval_minutes, 10);
+  first.stop();
+  const second = createScheduler({ db, settingsStore: createDatabaseSettingsStore({ dbProvider: () => db }), clock: fake.clock, setTimeoutFn: fake.setTimeoutFn, clearTimeoutFn: fake.clearTimeoutFn, logger: { warn() {}, error() {} } });
+  second.start();
+  assert.equal(second.status().enabled, true);
+  assert.equal(second.status().interval_minutes, 10);
+  second.stop();
 });

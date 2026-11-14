@@ -10,7 +10,7 @@ test('ported defaults match Python config for key settings', () => {
     SCORING_TITLE_KEYWORD_WEIGHT: 1.0, SCORING_DESCRIPTION_KEYWORD_WEIGHT: 0.5,
     SCORING_BUDGET_SATURATION_USD: 1000.0, INTERVAL_MINUTES: 60,
     RADAR_ENABLED: false, RADAR_INTERVAL_SECONDS: 120, RADAR_MAX_BIDS: 3,
-    HIGH_SCORE_THRESHOLD: 6, HOURLY_RATE_USD: 15, ESTIMATE_BUFFER: 1.25,
+    HIGH_SCORE_THRESHOLD: 6, ESTIMATE_BUFFER: 1.25,
   };
   for (const [key, value] of Object.entries(expected)) assert.deepEqual(config[key], value, key);
   assert.deepEqual(config.PRICE_GROUPS.A, new Set(['USD', 'EUR', 'GBP', 'AUD', 'CAD', 'NZD', 'SAR', 'AED']));

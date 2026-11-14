@@ -167,6 +167,30 @@ export async function sendPushNotification(userId, job, {
   }
 }
 
+export async function sendTestPush(userId, token, {
+  db = connect(), fetch: fetchImpl = globalThis.fetch, env = process.env, logger = console, now = () => Date.now(),
+} = {}) {
+  applyNotificationsMigration(db);
+  const row = db.prepare('SELECT token FROM device_tokens WHERE user_id=? AND token=? AND notifications_enabled=1').get(userId, token);
+  if (!row) throw error(404, 'DEVICE_NOT_REGISTERED', 'No enabled registered device matches this token');
+  if (env.NOTIFICATIONS_ENABLED !== 'true') throw error(503, 'FCM_DISABLED', 'Push notifications are disabled on the server');
+  const account = parseAccount(env);
+  if (!account) throw error(503, 'FCM_NOT_CONFIGURED', 'FCM service account is not configured');
+  const auth = await accessToken(account, fetchImpl, now);
+  if (!auth.token) throw error(502, 'FCM_AUTH_FAILED', 'FCM authorization failed');
+  const endpoint = `https://fcm.googleapis.com/v1/projects/${encodeURIComponent(account.project_id)}/messages:send`;
+  const message = toFcmMessage(token, { id: 'test', title: 'Jobbot test notification', score: 0 }, 'other', 'normal');
+  message.message.data.test = 'true';
+  let response;
+  try {
+    response = await fetchImpl(endpoint, { method: 'POST', headers: { authorization: `Bearer ${auth.token}`, 'content-type': 'application/json' }, body: JSON.stringify(message) });
+  } catch {
+    throw error(502, 'FCM_SEND_FAILED', 'Could not reach FCM');
+  }
+  if (!response?.ok) throw error(502, 'FCM_SEND_FAILED', `FCM returned HTTP ${Number.isInteger(response?.status) ? response.status : 'unknown'}`);
+  return { ok: true, sent: true };
+}
+
 export function handleNotificationRequest(action, { body, db = connect(), principal, logger = console } = {}) {
   applyNotificationsMigration(db);
   if (!principal || !Number.isSafeInteger(principal.userId)) throw error(401, 'UNAUTHORIZED', 'A valid API key is required');
@@ -190,6 +214,11 @@ export function handleNotificationRequest(action, { body, db = connect(), princi
     if (!body || typeof body.token !== 'string' || !body.token.trim()) throw error(400, 'INVALID_PARAMETER', 'token must be a non-empty string');
     db.prepare('DELETE FROM device_tokens WHERE token=? AND user_id=?').run(body.token.trim(), userId);
     return { ok: true };
+  }
+
+  if (action === 'test') {
+    if (!body || typeof body.token !== 'string' || !body.token.trim()) throw error(400, 'INVALID_PARAMETER', 'token must be a non-empty string');
+    return sendTestPush(userId, body.token.trim(), { db, logger });
   }
 
   if (action === 'patchSettings') {

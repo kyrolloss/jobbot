@@ -136,7 +136,13 @@ export function createServer({ db, config = defaultConfig, logger = defaultLogge
   for (const action of ['reject', 'applied', 'approve']) {
     router.add('POST', `/jobs/:id/${action}`, ({ params, principal }) => transitionJob(db, action, params.id, principal.userId));
   }
-  const scanWithEvents = (options) => runScan({ ...options, config: saasConfig, events: eventBus, logger });
+  const scanWithEvents = async (options) => {
+    const result = await runScan({ ...options, config: saasConfig, events: eventBus, logger });
+    db.exec('CREATE TABLE IF NOT EXISTS app_settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)');
+    db.prepare("INSERT INTO app_settings(key,value,updated_at) VALUES('last_scan',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at")
+      .run(JSON.stringify(result), new Date().toISOString());
+    return result;
+  };
   const scanScheduler = scheduler || createScheduler({ db, sources, clock, settingsStore, logger, onNewJob, scan: scanWithEvents });
   const allowedOrigins = originList(config.CORS_ORIGINS);
 
@@ -273,7 +279,7 @@ export function createServer({ db, config = defaultConfig, logger = defaultLogge
         sendJson(response, 409, { error: { code: 'SCAN_RUNNING', message: 'A scan is already running' } });
         return;
       }
-      const scanPromise = runScan({ db, sources, trigger: 'manual', clock, onNewJob, lock, events: eventBus, logger, config: saasConfig });
+      const scanPromise = scanWithEvents({ db, sources, trigger: 'manual', clock, onNewJob, lock });
       const startedAt = getScanState().started_at;
       void scanPromise.catch(() => logger.error('Manual scan failed'));
       sendJson(response, 202, { started: true, started_at: startedAt });
@@ -345,7 +351,7 @@ export function createServer({ db, config = defaultConfig, logger = defaultLogge
       }
       return new Promise((resolve, reject) => {
         const onError = (error) => { server.off('listening', onListening); reject(error); };
-        const onListening = () => { listening = true; server.off('error', onError); resolve(server.address()); };
+        const onListening = () => { listening = true; server.off('error', onError); scanScheduler.start?.(); resolve(server.address()); };
         server.once('error', onError);
         server.once('listening', onListening);
         server.listen(port, host);

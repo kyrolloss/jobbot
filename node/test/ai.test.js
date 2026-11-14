@@ -17,12 +17,13 @@ test('AI endpoints cache, regenerate, scope, persist, and serialize same-feature
   const dir=fs.mkdtempSync(path.join(os.tmpdir(),'ai-offline-')),db=openDb(path.join(dir,'test.db'));
   db.prepare("INSERT INTO jobs(source,external_id,title,description,url,budget,status,created_at) VALUES('freelancer','one','Flutter app','Build a Flutter mobile app','https://x','$100','sent','2026-01-01 00:00:00')").run();
   const id=Number(db.prepare('SELECT last_insert_rowid() id').get().id);
+  db.prepare('INSERT INTO user_profiles(user_id,profile_md,updated_at) VALUES(1,?,?)').run(JSON.stringify({ profile_text: 'Example freelancer with translation services' }),new Date().toISOString());
   const key='ai-api-test-key-at-least-24-characters';let calls=0;
   const outputs=[JSON.stringify({verdict:'apply',score:8,competition:'low',budget_fit:'مناسب',reasons:['سبب أول','سبب ثان'],suggested_bid:100}), 'Proposal text',JSON.stringify({tasks:[{name:'Build app',hours:4}],total_hours:4,risks:[],questions_for_client:[]})];
   const api=createServer({db,config:{API_KEY:key,API_HOST:'127.0.0.1',CORS_ORIGINS:[],GEMINI_API_KEY:'fake',GEMINI_MODEL:'fake',SAAS_ENABLED:false,PROFILE_PATH:path.join(dir,'profile.md')},geminiClient:{generate:async()=>({text:outputs[calls++],usage:{model:'fake',inputTokens:2,outputTokens:3}})},sources:[{name:'freelancer'}]});fs.writeFileSync(path.join(dir,'profile.md'),'Flutter developer');const address=await api.listen(0,'127.0.0.1'),base=`http://127.0.0.1:${address.port}`;t.after(async()=>{await api.close();closeDb(db);fs.rmSync(dir,{recursive:true,force:true});});
   const req=(route,body={},headers={})=>fetch(base+route,{method:'POST',headers:{'X-API-Key':key,'Content-Type':'application/json',...headers},body:JSON.stringify(body)});
   assert.equal((await fetch(`${base}/jobs/${id}/evaluate`)).status,401);
-  let response=await req(`/jobs/${id}/evaluate`);let payload=await response.json();assert.equal(payload.result.verdict,'apply');assert.equal(payload.usage.input_tokens,2);
+  let response=await req(`/jobs/${id}/evaluate`);let payload=await response.json();assert.equal(payload.result.verdict,'apply');assert.equal(payload.result.suggested_bid,null);assert.equal(payload.usage.input_tokens,2);
   payload=await (await req(`/jobs/${id}/evaluate`)).json();assert.equal(payload.cached,true);assert.equal(calls,1);
   await req(`/jobs/${id}/evaluate`,{regenerate:true});assert.equal(calls,2);
   await req(`/jobs/${id}/proposal`,{skip_evaluation:true});assert.equal(db.prepare('SELECT status FROM jobs WHERE rowid=?').get(id).status,'approved');

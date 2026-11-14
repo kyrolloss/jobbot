@@ -5,13 +5,13 @@ import { serializeDbTimestamp } from '../events.js';
 import { createCredits } from '../saas/credits.js';
 import { listPlans } from '../saas/plans.js';
 import { createUsage } from '../saas/usage.js';
-import fs from 'node:fs';
 import crypto from 'node:crypto';
 import { saveEvaluation, saveEstimate, saveProposal, saveStats, savePostedAt, setStatus } from '../db.js';
 import { buildEvaluationPrompt, parseEvaluation } from '../ai/evaluate.js';
 import { buildProposalPrompt } from '../ai/proposal.js';
 import { buildEstimatePrompt, parseEstimate, computePricing } from '../ai/estimate.js';
 import { getMarketMedians } from '../ai/prices.js';
+import { normalizeProfile, parseStoredProfile, profilePromptText, profileSearchTerms } from '../profile.js';
 
 const runningAi = new Set();
 
@@ -81,6 +81,28 @@ function queryFilters(query) {
 
 export function registerRoutes(router, { radar = null, config = {}, gemini = null, sources = [] } = {}) {
   router.add('GET', '/health', ({ version }) => ({ ok: true, version, time: new Date().toISOString() }));
+  router.add('GET', '/sources/status', ({ db }) => {
+    const rows = new Map(db.prepare('SELECT source,enabled,last_scan_at,last_count,last_error_code,last_error_message FROM source_scan_state').all().map((row) => [row.source, row]));
+    return { sources: sources.map((source) => {
+      const row = rows.get(source.name);
+      return { source: source.name, enabled: Boolean(row ? row.enabled : true), last_scan_at: row?.last_scan_at ?? null, last_count: row?.last_count ?? null,
+        last_error: row?.last_error_code ? { code: row.last_error_code, message: row.last_error_message || 'Source request failed' } : null };
+    }) };
+  });
+  router.add('GET', '/profile', ({ db, principal }) => {
+    const row = db.prepare('SELECT profile_md,updated_at FROM user_profiles WHERE user_id=?').get(principal.userId);
+    if (!row?.profile_md) return { exists: false };
+    return { exists: true, profile: parseStoredProfile(row.profile_md), updated_at: row.updated_at };
+  });
+  router.add('PUT', '/profile', ({ db, principal, body }) => {
+    const profile = normalizeProfile(body);
+    const terms = profileSearchTerms(profile);
+    const timestamp = new Date().toISOString();
+    db.prepare(`INSERT INTO user_profiles(user_id,profile_md,keywords,updated_at) VALUES(?,?,?,?)
+      ON CONFLICT(user_id) DO UPDATE SET profile_md=excluded.profile_md,keywords=excluded.keywords,updated_at=excluded.updated_at`)
+      .run(principal.userId, JSON.stringify(profile), JSON.stringify(terms.include), timestamp);
+    return { exists: true, profile, updated_at: timestamp };
+  });
   router.add('GET', '/plans', ({ db }) => listPlans(db));
   router.add('GET', '/me', ({ db, principal }) => {
     const user = db.prepare('SELECT id,email,name,role,status,created_at FROM users WHERE id=?').get(principal.userId);
@@ -132,13 +154,13 @@ export function registerRoutes(router, { radar = null, config = {}, gemini = nul
     let job=row(); if(!job)throw new HttpError(404,'NOT_FOUND','Job not found');
     const decode=(v)=>{try{return v?JSON.parse(v):null;}catch{return null;}};
     const cachedValue=kind==='evaluate'?decode(job.evaluation):kind==='proposal'?job.proposal:decode(job.estimate);
-    if(cachedValue && body?.regenerate!==true) return {job_id:id,kind,cached:true,result:kind==='estimate'?{...cachedValue,pricing:computePricing(cachedValue,job,{currency:job.currency},{...getMarketMedians(db)})}:cachedValue,usage:null,job:jobResponseForAi(job)};
+    if(cachedValue && body?.regenerate!==true) { const stored=parseStoredProfile(db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=?').get(uid)?.profile_md); return {job_id:id,kind,cached:true,result:kind==='estimate'?{...cachedValue,pricing:computePricing(cachedValue,job,{currency:job.currency},getMarketMedians(db),stored)}:cachedValue,usage:null,job:jobResponseForAi(job)}; }
     if(!gemini)throw new HttpError(503,'GEMINI_NOT_CONFIGURED','Gemini is not configured');
     const lock=`${uid}:${id}:${kind}`; if(runningAi.has(lock))throw new HttpError(409,'ALREADY_RUNNING','This generation is already running');
     runningAi.add(lock);
     try {
-      let profile=db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=?').get(uid)?.profile_md?.trim();
-      if(!profile && uid===1) { try{profile=fs.readFileSync(config.PROFILE_PATH,'utf8').trim();}catch{} }
+      const storedProfile=parseStoredProfile(db.prepare('SELECT profile_md FROM user_profiles WHERE user_id=?').get(uid)?.profile_md);
+      const profile=profilePromptText(storedProfile);
       if(kind==='proposal' && !profile)throw new HttpError(422,'PROFILE_REQUIRED','A profile is required to write a proposal');
       const evaluation=decode(job.evaluation);
       if(kind==='proposal' && !evaluation && body?.skip_evaluation!==true)throw new HttpError(409,'EVALUATION_REQUIRED','Evaluate the job before writing a proposal');
@@ -157,7 +179,7 @@ export function registerRoutes(router, { radar = null, config = {}, gemini = nul
         return {result:{value:parsed,meta:generated.usage},usage:generated.usage};
       });
       job=row(); const points=principal.role==='owner'||!config.SAAS_ENABLED?0:Number(config.FEATURE_COSTS?.[kind]||0);
-      const endpointResult=kind==='estimate'?{...result.value,pricing:computePricing(result.value,job,{currency:job.currency},getMarketMedians(db))}:result.value;
+      const endpointResult=kind==='estimate'?{...result.value,pricing:computePricing(result.value,job,{currency:job.currency},getMarketMedians(db),storedProfile)}:result.value;
       return {job_id:id,kind,cached:false,result:endpointResult,usage:{points,model:result.meta.model,input_tokens:result.meta.inputTokens,output_tokens:result.meta.outputTokens,cost_usd:(config.GEMINI_PRICE_PER_MTOK_INPUT||config.GEMINI_PRICE_PER_MTOK_OUTPUT)?((result.meta.inputTokens*(config.GEMINI_PRICE_PER_MTOK_INPUT||0)+result.meta.outputTokens*(config.GEMINI_PRICE_PER_MTOK_OUTPUT||0))/1e6):null},job:jobResponseForAi(job)};
     } finally {runningAi.delete(lock);}
   });

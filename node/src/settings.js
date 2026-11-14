@@ -3,6 +3,7 @@ import path from 'node:path';
 import { fileURLToPath } from 'node:url';
 import * as config from './config.js';
 import * as defaultLogger from './logger.js';
+import { connect } from './db.js';
 
 const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 export const SETTINGS_PATH = path.join(ROOT, 'settings.json');
@@ -69,4 +70,28 @@ export function createSettingsStore({ filePath = SETTINGS_PATH, logger = default
   return { read, write, update, filePath };
 }
 
-export const settingsStore = createSettingsStore();
+export function createDatabaseSettingsStore({ dbProvider = connect } = {}) {
+  function read() {
+    const db = dbProvider();
+    db.exec('CREATE TABLE IF NOT EXISTS app_settings (key TEXT PRIMARY KEY, value TEXT NOT NULL, updated_at TEXT NOT NULL DEFAULT CURRENT_TIMESTAMP)');
+    const row = db.prepare("SELECT value FROM app_settings WHERE key='scan_settings'").get();
+    if (!row) return write(defaultSettings());
+    try {
+      const parsed = JSON.parse(row.value);
+      if (!validSettings(parsed)) throw new Error('invalid');
+      return normalizeSettings(parsed);
+    } catch {
+      return write(defaultSettings());
+    }
+  }
+  function write(value) {
+    if (!validSettings(value)) throw new TypeError('Invalid scan settings');
+    const normalized = normalizeSettings(value);
+    dbProvider().prepare("INSERT INTO app_settings(key,value,updated_at) VALUES('scan_settings',?,?) ON CONFLICT(key) DO UPDATE SET value=excluded.value,updated_at=excluded.updated_at")
+      .run(JSON.stringify(normalized), new Date().toISOString());
+    return normalized;
+  }
+  return { read, write, update(patch) { return write({ ...read(), ...patch }); } };
+}
+
+export const settingsStore = createDatabaseSettingsStore();

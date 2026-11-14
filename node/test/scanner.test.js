@@ -7,6 +7,7 @@ import { openDb, closeDb } from '../src/db.js';
 import { runScan, tryAcquireScanLock, isScanRunning, ScanAlreadyRunningError, getScanState } from '../src/scanner.js';
 import { createSettingsStore } from '../src/settings.js';
 import { createServer } from '../src/server.js';
+import { KEYWORDS } from '../src/config.js';
 
 const fixedTime = new Date('2026-02-03T04:05:06.000Z');
 const testClock = () => {
@@ -18,6 +19,7 @@ const makeJob = (source, externalId, title, extra = {}) => ({ source, external_i
 function makeTempDb() {
   const dir = fs.mkdtempSync(path.join(os.tmpdir(), 'jobbot-scanner-'));
   const db = openDb(path.join(dir, 'scan.db'));
+  db.prepare('INSERT INTO user_profiles(user_id,profile_md,updated_at) VALUES(1,?,?)').run(JSON.stringify({ skills: KEYWORDS }), new Date().toISOString());
   return { dir, db };
 }
 

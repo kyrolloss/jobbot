@@ -142,11 +142,12 @@ export function labelForScore(score) {
   return '😐';
 }
 
-export function scoreJob(job, stats = null) {
+export function scoreJob(job, stats = null, keywords = KEYWORDS) {
   stats = stats || {};
   const title = job.title || '', description = job.description || '';
-  const titleMatches = KEYWORDS.reduce((count, keyword) => count + Number(matches(title, keyword)), 0);
-  const descriptionMatches = KEYWORDS.reduce((count, keyword) => count + Number(matches(description, keyword)), 0);
+  const selectedKeywords = Array.isArray(keywords) ? keywords : KEYWORDS;
+  const titleMatches = selectedKeywords.reduce((count, keyword) => count + Number(matches(title, keyword)), 0);
+  const descriptionMatches = selectedKeywords.reduce((count, keyword) => count + Number(matches(description, keyword)), 0);
   const titlePoints = Math.min(SCORING_TITLE_KEYWORD_CAP, titleMatches * SCORING_TITLE_KEYWORD_WEIGHT);
   const descriptionPoints = Math.min(SCORING_DESCRIPTION_KEYWORD_CAP, descriptionMatches * SCORING_DESCRIPTION_KEYWORD_WEIGHT);
   const [amount, currency] = budgetValues(job, stats);
